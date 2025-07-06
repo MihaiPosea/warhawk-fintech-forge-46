@@ -2,7 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Building2, Rocket, Mail, User, GraduationCap } from 'lucide-react';
+import { ArrowLeft, Building2, Rocket, Mail, User, GraduationCap, FileText, TrendingUp, Award } from 'lucide-react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -12,41 +12,62 @@ const DivisionSignup = () => {
   const navigate = useNavigate();
   const { slug } = useParams();
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     university: '',
-    program: '',
-    year: '',
-    experience: '',
-    motivation: ''
+    yearOfStudy: '',
+    whyInterested: ''
   });
 
   const divisionData = {
     'investment-banking': {
       icon: Building2,
-      title: 'Investment Banking',
+      title: 'Investment Banking Division',
       subtitle: 'WIBS - Waterloo Investment Banking Society',
       description: 'Join our selective investment banking division focused on M&A, financial modeling, and market analysis.',
-      requirements: [
-        'Strong academic performance (3.5+ GPA preferred)',
-        'Finance, Economics, or Business background',
-        'Excellent analytical and communication skills',
-        'Commitment to bi-weekly meetings and projects'
+      benefits: [
+        {
+          icon: FileText,
+          title: 'Professional Experience',
+          description: 'Work on real deal structures and financial models'
+        },
+        {
+          icon: TrendingUp,
+          title: 'Market Research',
+          description: 'Conduct equity research and sector analysis'
+        },
+        {
+          icon: Award,
+          title: 'Mentorship',
+          description: 'Learn from finance professionals and alumni'
+        }
       ],
-      color: 'bg-green-500/10 text-green-400 border-green-500/20'
+      color: 'bg-yellow-400'
     },
     'venture-capital': {
       icon: Rocket,
-      title: 'Venture Capital',
+      title: 'Venture Capital Division',
       subtitle: 'Startup Incubation & Advisory',
       description: 'Be part of our venture capital division, advising startups and conducting due diligence.',
-      requirements: [
-        'Interest in entrepreneurship and startups',
-        'Business, Engineering, or related field',
-        'Strong research and analytical abilities',
-        'Passion for innovation and growth'
+      benefits: [
+        {
+          icon: FileText,
+          title: 'Professional Experience',
+          description: 'Work on real deal structures and financial models'
+        },
+        {
+          icon: TrendingUp,
+          title: 'Market Research',
+          description: 'Conduct equity research and sector analysis'
+        },
+        {
+          icon: Award,
+          title: 'Mentorship',
+          description: 'Learn from finance professionals and alumni'
+        }
       ],
-      color: 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+      color: 'bg-yellow-400'
     }
   };
 
@@ -54,9 +75,9 @@ const DivisionSignup = () => {
 
   if (!division) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4 text-white">Division Not Found</h1>
+          <h1 className="text-2xl font-bold mb-4">Division Not Found</h1>
           <Button onClick={() => navigate('/')}>Return Home</Button>
         </div>
       </div>
@@ -65,7 +86,6 @@ const DivisionSignup = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would submit to a backend
     console.log('Form submitted:', formData);
     alert('Application submitted successfully! We will be in touch soon.');
     navigate('/');
@@ -76,163 +96,166 @@ const DivisionSignup = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <div className="border-b border-gray-800 bg-black/90">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-white">
+      {/* Header with geometric pattern */}
+      <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-10 left-10 w-32 h-32 border border-gray-300 rotate-45"></div>
+            <div className="absolute top-20 right-20 w-24 h-24 border border-gray-300 rotate-12"></div>
+            <div className="absolute bottom-10 left-1/3 w-40 h-40 border border-gray-300 -rotate-12"></div>
+          </div>
+        </div>
+        
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <Button
             variant="ghost"
             onClick={() => navigate('/')}
-            className="mb-4 text-yellow-400 hover:text-yellow-300 hover:bg-yellow-400/10"
+            className="mb-6 text-gray-600 hover:text-gray-800"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </Button>
-          <div className="text-center space-y-4">
+          
+          <div className="text-center space-y-6">
             <div className="flex items-center justify-center space-x-4">
-              <div className="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center">
-                <division.icon className="h-6 w-6 text-yellow-400" />
+              <div className={`w-16 h-16 ${division.color} rounded-2xl flex items-center justify-center shadow-lg`}>
+                <division.icon className="h-8 w-8 text-black" />
               </div>
-              <div>
-                <h1 className="text-3xl sm:text-4xl font-bold text-white">{division.title}</h1>
-                <p className="text-yellow-400 font-medium">{division.subtitle}</p>
+              <div className="text-left">
+                <h1 className="text-4xl font-bold text-gray-900">{division.title}</h1>
+                <p className="text-lg text-gray-600 font-medium">{division.subtitle}</p>
               </div>
             </div>
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto">{division.description}</p>
           </div>
         </div>
       </div>
 
-      <div className="section-padding">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Division Info */}
-            <div className="space-y-6">
-              <Card className="bg-gray-900 border-gray-800">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2 text-white">
-                    <span>About This Division</span>
-                    <Badge className={division.color}>Active</Badge>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-gray-300">{division.description}</p>
-                  
-                  <div>
-                    <h4 className="font-semibold mb-3 text-white">Requirements</h4>
-                    <ul className="space-y-2">
-                      {division.requirements.map((req, index) => (
-                        <li key={index} className="text-sm text-gray-300">
-                          • {req}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-yellow-400/5 border-yellow-400/20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Benefits Cards */}
+          <div className="lg:col-span-1 space-y-6">
+            {division.benefits.map((benefit, index) => (
+              <Card key={index} className="border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-2 text-yellow-400">What to Expect</h4>
-                  <ul className="space-y-2 text-sm text-gray-300">
-                    <li>• Hands-on projects with real-world applications</li>
-                    <li>• Mentorship from industry professionals</li>
-                    <li>• Networking opportunities with peers and alumni</li>
-                    <li>• Skills development workshops and training</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Application Form */}
-            <Card className="bg-gray-900 border-gray-800">
-              <CardHeader>
-                <CardTitle className="text-white">Join Our Team</CardTitle>
-                <p className="text-gray-300">Tell us about yourself and why you're interested</p>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-white">Full Name</label>
-                      <div className="relative">
-                        <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                        <Input
-                          placeholder="Your full name"
-                          className="pl-10 bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                          value={formData.name}
-                          onChange={(e) => handleInputChange('name', e.target.value)}
-                          required
-                        />
-                      </div>
+                  <div className="flex items-start space-x-4">
+                    <div className={`w-12 h-12 ${division.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                      <benefit.icon className="h-6 w-6 text-black" />
                     </div>
-                    
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-white">Email</label>
-                      <div className="relative">
-                        <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                        <Input
-                          type="email"
-                          placeholder="your.email@university.ca"
-                          className="pl-10 bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                          value={formData.email}
-                          onChange={(e) => handleInputChange('email', e.target.value)}
-                          required
-                        />
-                      </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-2">{benefit.title}</h3>
+                      <p className="text-gray-600 text-sm">{benefit.description}</p>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Application Form */}
+          <div className="lg:col-span-2">
+            <Card className="border-gray-200 shadow-lg">
+              <CardHeader className="bg-gray-50 border-b border-gray-200">
+                <CardTitle className="text-2xl text-gray-900">Application Form</CardTitle>
+                <p className="text-gray-600">Tell us about yourself and join our team</p>
+              </CardHeader>
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-white">University</label>
-                      <div className="relative">
-                        <GraduationCap className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                        <Input
-                          placeholder="Laurier / Waterloo"
-                          className="pl-10 bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                          value={formData.university}
-                          onChange={(e) => handleInputChange('university', e.target.value)}
-                          required
-                        />
-                      </div>
+                      <label className="text-sm font-medium text-gray-900">First Name</label>
+                      <Input
+                        placeholder="Enter your first name"
+                        className="border-gray-300 focus:border-yellow-400 focus:ring-yellow-400"
+                        value={formData.firstName}
+                        onChange={(e) => handleInputChange('firstName', e.target.value)}
+                        required
+                      />
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-white">Program & Year</label>
+                      <label className="text-sm font-medium text-gray-900">Last Name</label>
                       <Input
-                        placeholder="e.g., BBA Finance, 3rd Year"
-                        className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                        value={formData.program}
-                        onChange={(e) => handleInputChange('program', e.target.value)}
+                        placeholder="Enter your last name"
+                        className="border-gray-300 focus:border-yellow-400 focus:ring-yellow-400"
+                        value={formData.lastName}
+                        onChange={(e) => handleInputChange('lastName', e.target.value)}
                         required
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-white">Relevant Experience</label>
-                    <Textarea
-                      placeholder="Tell us about any relevant coursework, internships, projects, or extracurricular activities..."
-                      className="min-h-[100px] bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                      value={formData.experience}
-                      onChange={(e) => handleInputChange('experience', e.target.value)}
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-white">Why are you interested in this division?</label>
-                    <Textarea
-                      placeholder="What motivates you to join our team? What do you hope to learn and contribute?"
-                      className="min-h-[120px] bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                      value={formData.motivation}
-                      onChange={(e) => handleInputChange('motivation', e.target.value)}
+                    <label className="text-sm font-medium text-gray-900">Email</label>
+                    <Input
+                      type="email"
+                      placeholder="your.email@university.ca"
+                      className="border-gray-300 focus:border-yellow-400 focus:ring-yellow-400"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
                       required
                     />
                   </div>
 
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-900">University</label>
+                    <Input
+                      placeholder="Laurier / Waterloo"
+                      className="border-gray-300 focus:border-yellow-400 focus:ring-yellow-400"
+                      value={formData.university}
+                      onChange={(e) => handleInputChange('university', e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-900">Year of Study</label>
+                    <select 
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
+                      value={formData.yearOfStudy}
+                      onChange={(e) => handleInputChange('yearOfStudy', e.target.value)}
+                      required
+                    >
+                      <option value="">Select your year</option>
+                      <option value="Freshman">Freshman</option>
+                      <option value="Sophomore">Sophomore</option>
+                      <option value="Junior">Junior</option>
+                      <option value="Senior">Senior</option>
+                      <option value="Graduate">Graduate</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-900">
+                      Why are you interested in {division.title}?
+                    </label>
+                    <Textarea
+                      placeholder="Tell us about your interest and what you hope to contribute..."
+                      className="min-h-[120px] border-gray-300 focus:border-yellow-400 focus:ring-yellow-400"
+                      value={formData.whyInterested}
+                      onChange={(e) => handleInputChange('whyInterested', e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-900">Resume Upload</label>
+                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-yellow-400 transition-colors">
+                      <input type="file" accept=".pdf,.doc,.docx" className="hidden" id="resume-upload" />
+                      <label htmlFor="resume-upload" className="cursor-pointer">
+                        <div className="space-y-2">
+                          <FileText className="h-8 w-8 text-gray-400 mx-auto" />
+                          <p className="text-sm text-gray-600">Choose File or drag and drop</p>
+                          <p className="text-xs text-gray-500">PDF, DOC, DOCX up to 10MB</p>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+
                   <Button 
                     type="submit" 
-                    className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold"
+                    className={`w-full ${division.color} hover:bg-yellow-500 text-black font-semibold py-3 text-lg`}
                   >
                     Submit Application
                   </Button>

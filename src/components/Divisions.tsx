@@ -2,11 +2,21 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Building2, Rocket, BarChart3, Shield, PieChart, TrendingUp, ArrowRight, Linkedin, Target, Users, Award } from 'lucide-react';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { Building2, Rocket, BarChart3, Shield, PieChart, TrendingUp, ArrowRight, Linkedin, Target, Users, Award, ChevronDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Divisions = () => {
   const navigate = useNavigate();
+  const [openSections, setOpenSections] = useState<{[key: string]: boolean}>({});
+
+  const toggleSection = (divisionTitle: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [divisionTitle]: !prev[divisionTitle]
+    }));
+  };
 
   const currentDivisions = [
     {
@@ -62,13 +72,13 @@ const Divisions = () => {
         {
           name: "Martin Mcconkey",
           role: "Co-Founder, Investment Banking Team Lead",
-          image: "/lovable-uploads/23024191-d064-4241-b944-1d9f4059fda4.png",
+          image: "/lovable-uploads/506f68a3-2b30-48d4-807a-3808dded96ab.png",
           linkedin: "https://www.linkedin.com/in/martinmcco/"
         },
         {
           name: "Jennifer Peter",
           role: "Co-Founder, Investment Banking Team Lead", 
-          image: "/lovable-uploads/4bfb4cdd-66d1-4386-9c34-0e6ad77e2942.png",
+          image: "/lovable-uploads/ddcac406-e02d-4671-bff3-a916584c2c1c.png",
           linkedin: "https://www.linkedin.com/in/jennifer-peter/"
         }
       ],
@@ -118,45 +128,18 @@ const Divisions = () => {
         {
           name: "Mihai Posea",
           role: "Co-Founder, Venture Capital Division Lead",
-          image: "/lovable-uploads/cb395d90-db83-407e-b156-34ce4233c03c.png",
+          image: "/lovable-uploads/e7a6b031-44e9-400c-a456-99c7f3e61e4c.png",
           linkedin: "https://www.linkedin.com/in/mihaiposea/"
         },
         {
           name: "Gabriel Pogrin",
           role: "Co-Founder, Venture Capital Division Lead",
-          image: "/lovable-uploads/08a0a9dc-6935-4d9e-aad6-639a687b315e.png",
+          image: "/lovable-uploads/6c3aa9ac-789b-4edb-a8ef-17fe8a72ef97.png",
           linkedin: "https://www.linkedin.com/in/gabrielpogrin/"
         }
       ],
       status: "Active",
       color: "bg-green-500/10 text-green-400 border-green-500/20"
-    }
-  ];
-
-  const futureDivisions = [
-    {
-      icon: BarChart3,
-      title: "Quantitative Trading",
-      description: "Algorithmic trading strategies and systematic investment approaches using advanced mathematical models.",
-      color: "bg-muted/50 text-muted-foreground border-muted"
-    },
-    {
-      icon: Shield,
-      title: "Risk Management", 
-      description: "Portfolio risk assessment, stress testing, and comprehensive risk analytics for institutional-grade management.",
-      color: "bg-muted/50 text-muted-foreground border-muted"
-    },
-    {
-      icon: PieChart,
-      title: "Fixed Income",
-      description: "Bond trading, yield curve analysis, and credit research for debt securities and structured products.",
-      color: "bg-muted/50 text-muted-foreground border-muted"
-    },
-    {
-      icon: TrendingUp,
-      title: "Alternative Investments",
-      description: "Private equity, hedge funds, real estate, and commodity investment strategies.",
-      color: "bg-muted/50 text-muted-foreground border-muted"
     }
   ];
 
@@ -169,7 +152,7 @@ const Divisions = () => {
     <section id="divisions" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold animate-fade-in">
             Our <span className="gradient-text">Divisions</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -179,7 +162,7 @@ const Divisions = () => {
 
         {/* Current Divisions */}
         <div className="space-y-8 mb-20">
-          <h3 className="text-2xl font-bold text-center">Active Divisions</h3>
+          <h3 className="text-3xl font-bold text-center animate-fade-in">Active Divisions</h3>
           <div className="grid lg:grid-cols-2 gap-8">
             {currentDivisions.map((division, index) => (
               <Card key={index} className="card-hover bg-card border-border">
@@ -200,64 +183,73 @@ const Divisions = () => {
                 <CardContent className="space-y-6">
                   <p className="text-muted-foreground">{division.description}</p>
                   
-                  {/* Learn More Section */}
-                  <div className="space-y-4 bg-secondary/30 rounded-lg p-4">
-                    <h5 className="font-semibold text-primary">Learn More</h5>
-                    
-                    {division.learnMore.whyWIBS && (
-                      <div className="space-y-3">
-                        <h6 className="font-medium text-sm">{division.learnMore.whyWIBS.title}</h6>
+                  {/* Collapsible Learn More Section */}
+                  <Collapsible 
+                    open={openSections[division.title]} 
+                    onOpenChange={() => toggleSection(division.title)}
+                  >
+                    <CollapsibleTrigger asChild>
+                      <Button variant="outline" className="w-full justify-between">
+                        Learn More
+                        <ChevronDown className={`h-4 w-4 transition-transform ${openSections[division.title] ? 'rotate-180' : ''}`} />
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="space-y-4 mt-4 bg-secondary/30 rounded-lg p-4">
+                      {division.learnMore.whyWIBS && (
                         <div className="space-y-3">
-                          {division.learnMore.whyWIBS.points.map((point, idx) => (
-                            <div key={idx} className="flex gap-3">
-                              <div className="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                <point.icon className="h-4 w-4 text-accent" />
+                          <h6 className="font-medium text-sm">{division.learnMore.whyWIBS.title}</h6>
+                          <div className="space-y-3">
+                            {division.learnMore.whyWIBS.points.map((point, idx) => (
+                              <div key={idx} className="flex gap-3">
+                                <div className="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                  <point.icon className="h-4 w-4 text-accent" />
+                                </div>
+                                <div>
+                                  <p className="font-medium text-sm">{point.title}</p>
+                                  <p className="text-xs text-muted-foreground">{point.description}</p>
+                                </div>
                               </div>
-                              <div>
-                                <p className="font-medium text-sm">{point.title}</p>
-                                <p className="text-xs text-muted-foreground">{point.description}</p>
-                              </div>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
 
-                    {division.learnMore.description && (
-                      <div className="space-y-2">
-                        <p className="text-sm text-muted-foreground">{division.learnMore.description}</p>
-                        {division.learnMore.quote && (
-                          <p className="text-sm font-medium italic">"{division.learnMore.quote}"</p>
-                        )}
-                      </div>
-                    )}
-
-                    {division.learnMore.process && (
-                      <div className="space-y-2">
-                        <h6 className="font-medium text-sm">{division.learnMore.process.title}</h6>
-                        <div className="grid grid-cols-1 gap-2">
-                          {division.learnMore.process.steps.map((step, idx) => (
-                            <div key={idx} className="flex gap-2 items-start">
-                              <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-                                <span className="text-xs font-bold text-black">{step.step}</span>
-                              </div>
-                              <div>
-                                <p className="font-medium text-xs">{step.title}</p>
-                                <p className="text-xs text-muted-foreground">{step.description}</p>
-                              </div>
-                            </div>
-                          ))}
+                      {division.learnMore.description && (
+                        <div className="space-y-2">
+                          <p className="text-sm text-muted-foreground">{division.learnMore.description}</p>
+                          {division.learnMore.quote && (
+                            <p className="text-sm font-medium italic">"{division.learnMore.quote}"</p>
+                          )}
                         </div>
-                      </div>
-                    )}
+                      )}
 
-                    {division.learnMore.differentiation && (
-                      <div className="pt-2 border-t border-border">
-                        <h6 className="font-medium text-sm mb-1">Differentiation</h6>
-                        <p className="text-xs text-muted-foreground">{division.learnMore.differentiation}</p>
-                      </div>
-                    )}
-                  </div>
+                      {division.learnMore.process && (
+                        <div className="space-y-2">
+                          <h6 className="font-medium text-sm">{division.learnMore.process.title}</h6>
+                          <div className="grid grid-cols-1 gap-2">
+                            {division.learnMore.process.steps.map((step, idx) => (
+                              <div key={idx} className="flex gap-2 items-start">
+                                <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                                  <span className="text-xs font-bold text-black">{step.step}</span>
+                                </div>
+                                <div>
+                                  <p className="font-medium text-xs">{step.title}</p>
+                                  <p className="text-xs text-muted-foreground">{step.description}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {division.learnMore.differentiation && (
+                        <div className="pt-2 border-t border-border">
+                          <h6 className="font-medium text-sm mb-1">Differentiation</h6>
+                          <p className="text-xs text-muted-foreground">{division.learnMore.differentiation}</p>
+                        </div>
+                      )}
+                    </CollapsibleContent>
+                  </Collapsible>
 
                   {/* Founders Section */}
                   <div>
