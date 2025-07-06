@@ -242,6 +242,20 @@ const Divisions = () => {
                         </div>
                       )}
 
+                      {division.learnMore.reportsProjects && (
+                        <div className="space-y-2">
+                          <h6 className="font-medium text-sm">{division.learnMore.reportsProjects.title}</h6>
+                          <div className="grid grid-cols-1 gap-2">
+                            {division.learnMore.reportsProjects.projects.map((project, idx) => (
+                              <div key={idx} className="bg-white/50 rounded-lg p-2">
+                                <p className="font-medium text-xs">{project.title}</p>
+                                <p className="text-xs text-muted-foreground">{project.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
                       {division.learnMore.differentiation && (
                         <div className="pt-2 border-t border-border">
                           <h6 className="font-medium text-sm mb-1">Differentiation</h6>
