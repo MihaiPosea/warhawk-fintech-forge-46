@@ -1,5 +1,5 @@
 
-import { Building, Mail, ExternalLink } from 'lucide-react';
+import { Building, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,7 +28,7 @@ const Footer = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-medium text-lg leading-tight">warhawk capital</span>
-                <span className="text-xs text-muted-foreground leading-tight">est. 2024</span>
+                <span className="text-xs text-accent leading-tight">est. 2024</span>
               </div>
             </div>
             <p className="text-sm text-muted-foreground font-light">
@@ -93,7 +93,7 @@ const Footer = () => {
           </p>
           <div className="flex items-center space-x-4 mt-4 sm:mt-0">
             <span className="text-sm text-muted-foreground font-light">Made with</span>
-            <span className="text-red-500">❤️</span>
+            <span className="text-accent">❤️</span>
             <span className="text-sm text-muted-foreground font-light">by students, for students</span>
           </div>
         </div>

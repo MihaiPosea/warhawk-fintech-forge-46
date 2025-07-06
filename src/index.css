@@ -5,28 +5,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Warhawk Student Capital Design System */
+/* Warhawk Student Capital Design System - Black & White with Yellow Accents */
 @layer base {
   :root {
-    --background: 42 50% 95%; /* #f6f3e9 - cream */
-    --foreground: 12 100% 5%; /* #170a00 - dark */
-    --card: 42 50% 98%;
-    --card-foreground: 12 100% 5%;
-    --popover: 42 50% 98%;
-    --popover-foreground: 12 100% 5%;
-    --primary: 12 100% 5%; /* #170a00 - black instead of yellow */
-    --primary-foreground: 42 50% 95%; /* cream text on black */
-    --secondary: 42 30% 85%;
-    --secondary-foreground: 12 100% 5%;
-    --muted: 42 30% 88%;
-    --muted-foreground: 0 0% 15%; /* much darker grey, almost black */
-    --accent: 12 100% 5%; /* black accent */
-    --accent-foreground: 42 50% 95%; /* cream text */
+    --background: 0 0% 100%; /* pure white */
+    --foreground: 0 0% 0%; /* pure black */
+    --card: 0 0% 100%; /* white cards */
+    --card-foreground: 0 0% 0%; /* black text on cards */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%; /* black primary */
+    --primary-foreground: 0 0% 100%; /* white text on black */
+    --secondary: 0 0% 95%; /* light grey */
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 90%; /* light grey for muted elements */
+    --muted-foreground: 0 0% 40%; /* dark grey text */
+    --accent: 45 100% 50%; /* bright yellow accent */
+    --accent-foreground: 0 0% 0%; /* black text on yellow */
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 42 50% 95%;
-    --border: 42 30% 80%;
-    --input: 42 30% 85%;
-    --ring: 12 100% 5%; /* black ring */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 80%; /* light grey borders */
+    --input: 0 0% 95%;
+    --ring: 45 100% 50%; /* yellow focus ring */
     --radius: 0.5rem;
   }
 }
@@ -49,7 +49,7 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-foreground to-gray-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent to-yellow-600 bg-clip-text text-transparent;
   }
   
   .card-hover {
@@ -58,5 +58,9 @@
   
   .section-padding {
     @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+  }
+  
+  .yellow-accent {
+    @apply text-accent;
   }
 }

@@ -24,7 +24,7 @@ const Navbar = () => {
           </div>
           <div className="flex flex-col">
             <span className="font-medium text-lg text-foreground leading-tight">warhawk capital</span>
-            <span className="text-xs text-muted-foreground leading-tight">est. 2024</span>
+            <span className="text-xs text-accent leading-tight">est. 2024</span>
           </div>
         </div>
 
@@ -56,7 +56,7 @@ const Navbar = () => {
           </button>
           <Button 
             onClick={() => scrollToSection('contact')}
-            className="bg-foreground hover:bg-foreground/90 text-background rounded-full px-6 py-2 text-sm font-light"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 py-2 text-sm font-light"
           >
             Join Us
           </Button>
@@ -106,7 +106,7 @@ const Navbar = () => {
             <div className="px-3 py-2">
               <Button 
                 onClick={() => scrollToSection('contact')}
-                className="w-full bg-foreground hover:bg-foreground/90 text-background rounded-full text-sm font-light"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full text-sm font-light"
               >
                 Join Us
               </Button>

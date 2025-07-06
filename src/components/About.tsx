@@ -1,8 +1,12 @@
 
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Target, TrendingUp, Award } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Users, Target, TrendingUp, Award, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
+  const navigate = useNavigate();
+
   const features = [
     {
       icon: Users,
@@ -52,10 +56,17 @@ const About = () => {
               growth. As we expand, new divisions will be added to reflect the evolving world of 
               finance and prepare students to lead it.
             </p>
+            <Button 
+              onClick={() => navigate('/structure')}
+              className="bg-accent hover:bg-accent/90 text-accent-foreground group mt-6"
+            >
+              Our Structure
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </div>
 
           <div className="relative">
-            <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/40 rounded-2xl flex items-center justify-center">
+            <div className="aspect-square bg-gradient-to-br from-accent/20 to-secondary/40 rounded-2xl flex items-center justify-center">
               <div className="text-center space-y-4">
                 <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto">
                   <span className="text-3xl font-bold text-primary-foreground">WC</span>
@@ -73,8 +84,8 @@ const About = () => {
           {features.map((feature, index) => (
             <Card key={index} className="card-hover bg-card border-border">
               <CardContent className="p-6 text-center space-y-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
-                  <feature.icon className="h-6 w-6 text-primary" />
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto">
+                  <feature.icon className="h-6 w-6 text-accent" />
                 </div>
                 <h4 className="font-semibold">{feature.title}</h4>
                 <p className="text-sm text-muted-foreground">{feature.description}</p>

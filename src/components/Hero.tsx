@@ -38,8 +38,8 @@ const Hero = () => {
             </h1>
             <p className="text-xl sm:text-2xl text-white max-w-3xl mx-auto leading-relaxed font-light drop-shadow-md">
               Bridging the Gap Between Top Finance Talent at{' '}
-              <span className="font-medium">Laurier</span> and{' '}
-              <span className="font-medium">Waterloo</span>
+              <span className="font-medium text-yellow-300">Laurier</span> and{' '}
+              <span className="font-medium text-yellow-300">Waterloo</span>
             </p>
           </div>
 
