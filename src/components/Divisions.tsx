@@ -2,7 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Building2, Rocket, BarChart3, Shield, PieChart, TrendingUp, ArrowRight, Linkedin } from 'lucide-react';
+import { Building2, Rocket, BarChart3, Shield, PieChart, TrendingUp, ArrowRight, Linkedin, Target, Users, Award } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Divisions = () => {
@@ -14,18 +14,50 @@ const Divisions = () => {
       title: "Investment Banking",
       subtitle: "WIBS - Waterloo Investment Banking Society",
       description: "Hands-on experience in financial modeling, deal execution, and market analysis, preparing students for top-tier investment banking roles.",
-      features: [
-        "M&A Research Reports",
-        "LBO Case Studies", 
-        "Industry Sector Analysis",
-        "IPO Valuation Models"
-      ],
-      highlights: [
-        "Selective 5-10 member community",
-        "Bi-weekly check-ins & mock interviews",
-        "Real industry-relevant projects",
-        "First inter-city finance club"
-      ],
+      learnMore: {
+        whyWIBS: {
+          title: "Why WIBS?",
+          points: [
+            {
+              icon: Target,
+              title: "Selective and Focused Community",
+              description: "A highly selective group of top Laurier & Waterloo students committed to breaking into top tier investment banking and private equity roles. WIBS will launch as a small invite-only society limited to 5-10 members to maintain quality and focus."
+            },
+            {
+              icon: Users,
+              title: "Structured Accountability & Support", 
+              description: "During recruiting cycles members are required to stay disciplined with bi-weekly check-ins, mock interviews, and technical training to keep their networking, interview prep, and deal knowledge on track. This all feeds into the end goal of producing well-prepared candidates who will have the ability to pursue prestigious career opportunities, while aiding each other in the process."
+            },
+            {
+              icon: Award,
+              title: "Resume-Boosting Projects",
+              description: "Work on real, industry-relevant initiatives like M&A research reports, LBO case studies, and various other (TBD) applications that enhance technical skills and provide credible resume entries."
+            }
+          ]
+        },
+        reportsProjects: {
+          title: "Reports & Projects",
+          projects: [
+            {
+              title: "M&A Research Reports",
+              description: "Comprehensive analysis of merger and acquisition opportunities across various sectors"
+            },
+            {
+              title: "LBO Case Studies", 
+              description: "Detailed leveraged buyout analysis and financial modeling exercises"
+            },
+            {
+              title: "Industry Sector Analysis",
+              description: "Deep-dive research into emerging markets and industry trends"
+            },
+            {
+              title: "IPO Valuation Models",
+              description: "Financial modeling and valuation frameworks for public offerings"
+            }
+          ]
+        },
+        differentiation: "WIBS will be the first club to focus solely on sell-side/IB tasks instead of combining it in with equity research and stock pitches. WIBS will also be the first inter-city finance club, aiming to attract the highest performers from both schools."
+      },
       founders: [
         {
           name: "Martin Mcconkey",
@@ -35,7 +67,7 @@ const Divisions = () => {
         },
         {
           name: "Jennifer Peter",
-          role: "Co-Founder, Investment Banking Team Lead",
+          role: "Co-Founder, Investment Banking Team Lead", 
           image: "/lovable-uploads/4bfb4cdd-66d1-4386-9c34-0e6ad77e2942.png",
           linkedin: "https://www.linkedin.com/in/jennifer-peter/"
         }
@@ -48,18 +80,40 @@ const Divisions = () => {
       title: "Venture Capital",
       subtitle: "Startup Incubation & Advisory",
       description: "Acting as an incubator, advising startups through strategic guidance, due diligence, and connecting them with resources to accelerate growth.",
-      features: [
-        "Strategic Advisory",
-        "Due Diligence",
-        "Network Connections",
-        "Growth Acceleration"
-      ],
-      highlights: [
-        "End-to-end startup support",
-        "Comprehensive market analysis",
-        "Extensive mentor network",
-        "Funding success tracking"
-      ],
+      learnMore: {
+        description: "Our Venture Capital Division acts as an incubator, advising startups and founders through strategic guidance, conducting thorough due diligence, and connecting them with the right people and resources to accelerate their growth.",
+        quote: "We are simply getting you on the ground running.",
+        process: {
+          title: "Our Process",
+          steps: [
+            {
+              step: 1,
+              title: "Startups Reach Out",
+              description: "Startups contact Warhawk Capital's Venture Capital Division seeking guidance and support for their growth journey."
+            },
+            {
+              step: 2,
+              title: "Strategic Advisory",
+              description: "We provide comprehensive strategic guidance, market analysis, and business development support tailored to each startup's needs."
+            },
+            {
+              step: 3,
+              title: "Due Diligence",
+              description: "Our team conducts thorough due diligence, evaluating market potential, financial projections, and growth strategies."
+            },
+            {
+              step: 4,
+              title: "Network Connection",
+              description: "We connect startups with the right people, mentors, and resources within our extensive network to accelerate growth."
+            },
+            {
+              step: 5,
+              title: "Funding Success",
+              description: "Startups secure funding and achieve their growth milestones with our comprehensive support and guidance."
+            }
+          ]
+        }
+      },
       founders: [
         {
           name: "Mihai Posea",
@@ -146,58 +200,93 @@ const Divisions = () => {
                 <CardContent className="space-y-6">
                   <p className="text-muted-foreground">{division.description}</p>
                   
-                  <div className="space-y-4">
-                    <div>
-                      <h5 className="font-semibold mb-2">Key Projects</h5>
-                      <div className="grid grid-cols-2 gap-2">
-                        {division.features.map((feature, idx) => (
-                          <div key={idx} className="text-sm text-muted-foreground">
-                            • {feature}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                  {/* Learn More Section */}
+                  <div className="space-y-4 bg-secondary/30 rounded-lg p-4">
+                    <h5 className="font-semibold text-primary">Learn More</h5>
                     
-                    <div>
-                      <h5 className="font-semibold mb-2">Highlights</h5>
-                      <div className="space-y-1">
-                        {division.highlights.map((highlight, idx) => (
-                          <div key={idx} className="text-sm text-muted-foreground">
-                            • {highlight}
-                          </div>
-                        ))}
+                    {division.learnMore.whyWIBS && (
+                      <div className="space-y-3">
+                        <h6 className="font-medium text-sm">{division.learnMore.whyWIBS.title}</h6>
+                        <div className="space-y-3">
+                          {division.learnMore.whyWIBS.points.map((point, idx) => (
+                            <div key={idx} className="flex gap-3">
+                              <div className="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <point.icon className="h-4 w-4 text-accent" />
+                              </div>
+                              <div>
+                                <p className="font-medium text-sm">{point.title}</p>
+                                <p className="text-xs text-muted-foreground">{point.description}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
 
-                    {/* Founders Section */}
-                    <div>
-                      <h5 className="font-semibold mb-3">Meet Our Founders</h5>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {division.founders.map((founder, idx) => (
-                          <div key={idx} className="text-center space-y-2">
-                            <div className="w-16 h-16 mx-auto rounded-full border-2 border-accent/20 overflow-hidden">
-                              <img 
-                                src={founder.image} 
-                                alt={founder.name}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                            <div>
-                              <p className="font-medium text-sm">{founder.name}</p>
-                              <p className="text-xs text-muted-foreground">{founder.role}</p>
-                              <a 
-                                href={founder.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center space-x-1 text-accent hover:text-accent/80 transition-colors mt-1"
-                              >
-                                <Linkedin className="h-3 w-3" />
-                                <span className="text-xs">LinkedIn</span>
-                              </a>
-                            </div>
-                          </div>
-                        ))}
+                    {division.learnMore.description && (
+                      <div className="space-y-2">
+                        <p className="text-sm text-muted-foreground">{division.learnMore.description}</p>
+                        {division.learnMore.quote && (
+                          <p className="text-sm font-medium italic">"{division.learnMore.quote}"</p>
+                        )}
                       </div>
+                    )}
+
+                    {division.learnMore.process && (
+                      <div className="space-y-2">
+                        <h6 className="font-medium text-sm">{division.learnMore.process.title}</h6>
+                        <div className="grid grid-cols-1 gap-2">
+                          {division.learnMore.process.steps.map((step, idx) => (
+                            <div key={idx} className="flex gap-2 items-start">
+                              <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="text-xs font-bold text-black">{step.step}</span>
+                              </div>
+                              <div>
+                                <p className="font-medium text-xs">{step.title}</p>
+                                <p className="text-xs text-muted-foreground">{step.description}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {division.learnMore.differentiation && (
+                      <div className="pt-2 border-t border-border">
+                        <h6 className="font-medium text-sm mb-1">Differentiation</h6>
+                        <p className="text-xs text-muted-foreground">{division.learnMore.differentiation}</p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Founders Section */}
+                  <div>
+                    <h5 className="font-semibold mb-3">Meet Our Founders</h5>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {division.founders.map((founder, idx) => (
+                        <div key={idx} className="text-center space-y-2">
+                          <div className="w-16 h-16 mx-auto rounded-full border-2 border-accent/20 overflow-hidden">
+                            <img 
+                              src={founder.image} 
+                              alt={founder.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div>
+                            <p className="font-medium text-sm">{founder.name}</p>
+                            <p className="text-xs text-muted-foreground">{founder.role}</p>
+                            <a 
+                              href={founder.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center space-x-1 text-accent hover:text-accent/80 transition-colors mt-1"
+                            >
+                              <Linkedin className="h-3 w-3" />
+                              <span className="text-xs">LinkedIn</span>
+                            </a>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
@@ -208,37 +297,6 @@ const Divisions = () => {
                     Join Division
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Future Divisions */}
-        <div className="space-y-8">
-          <div className="text-center space-y-4">
-            <h3 className="text-2xl font-bold">Coming Soon</h3>
-            <p className="text-muted-foreground">
-              Expanding our expertise across all major finance sectors
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {futureDivisions.map((division, index) => (
-              <Card key={index} className="bg-card border-border opacity-60">
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 bg-muted/20 rounded-lg flex items-center justify-center">
-                      <division.icon className="h-5 w-5 text-muted-foreground" />
-                    </div>
-                    <Badge className={division.color}>
-                      Coming Soon
-                    </Badge>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">{division.title}</h4>
-                    <p className="text-sm text-muted-foreground mt-2">{division.description}</p>
-                  </div>
                 </CardContent>
               </Card>
             ))}
