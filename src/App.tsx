@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Structure from "./pages/Structure";
 import DivisionSignup from "./pages/DivisionSignup";
+import SubmitStartup from "./pages/SubmitStartup";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/structure" element={<Structure />} />
           <Route path="/division/:slug" element={<DivisionSignup />} />
+          <Route path="/submit-startup" element={<SubmitStartup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

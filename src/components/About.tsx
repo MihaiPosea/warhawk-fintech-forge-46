@@ -66,16 +66,12 @@ const About = () => {
           </div>
 
           <div className="relative">
-            <div className="aspect-square bg-gradient-to-br from-accent/20 to-secondary/40 rounded-2xl flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-3xl font-bold text-primary-foreground">WC</span>
-                </div>
-                <div className="space-y-2">
-                  <h4 className="text-xl font-bold">Warhawk Capital</h4>
-                  <p className="text-muted-foreground">Est. 2024</p>
-                </div>
-              </div>
+            <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center p-8">
+              <img 
+                src="/lovable-uploads/973c839b-e257-4a2f-add8-e0d544be1635.png" 
+                alt="Warhawk Capital Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
         </div>
@@ -84,8 +80,8 @@ const About = () => {
           {features.map((feature, index) => (
             <Card key={index} className="card-hover bg-card border-border">
               <CardContent className="p-6 text-center space-y-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto">
-                  <feature.icon className="h-6 w-6 text-accent" />
+                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto">
+                  <feature.icon className="h-6 w-6 text-foreground" />
                 </div>
                 <h4 className="font-semibold">{feature.title}</h4>
                 <p className="text-sm text-muted-foreground">{feature.description}</p>

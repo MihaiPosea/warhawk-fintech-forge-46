@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, TrendingUp } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -17,19 +17,13 @@ const Hero = () => {
       {/* Hero Image Background with margin and rounded corners */}
       <div 
         style={{
-          backgroundImage: 'url(/lovable-uploads/a0ef2dd5-ac29-471e-9318-acb5269c1974.png)'
+          backgroundImage: 'url(/lovable-uploads/973c839b-e257-4a2f-add8-e0d544be1635.png)'
         }} 
         className="absolute inset-8 bg-cover bg-center bg-no-repeat rounded-3xl" 
       />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-300">
-            <TrendingUp className="h-4 w-4 text-foreground" />
-            <span className="text-sm font-light text-foreground">Student-Led Capital Fund</span>
-          </div>
-
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight text-white drop-shadow-lg">
@@ -37,7 +31,7 @@ const Hero = () => {
               <span className="block font-extralight ">student capital</span>
             </h1>
             <p className="text-xl sm:text-2xl text-white max-w-3xl mx-auto leading-relaxed font-light drop-shadow-md">
-              Bridging the Gap Between Top Finance Talent at{' '}
+              The bridge connecting top finance talent across{' '}
               <span className="font-medium text-yellow-300">Laurier</span> and{' '}
               <span className="font-medium text-yellow-300">Waterloo</span>
             </p>
@@ -45,9 +39,7 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-lg text-white max-w-4xl mx-auto leading-relaxed font-light drop-shadow-md">
-            A student-led, inter-university capital fund combining Laurier's finance strengths 
-            with Waterloo's technical edge. Gain hands-on experience in investment research, 
-            trading, modeling, due diligence, and risk analysis.
+            Warhawk Capital brings together top students from both campuses to deliver hands-on experience across the most competitive areas of finance. Through specialized divisions and a shared standard of excellence, we're building a community of future leaders prepared to thrive in the world of finance.
           </p>
 
           {/* CTA Buttons */}
@@ -68,8 +60,8 @@ const Hero = () => {
               <div className="text-sm text-white uppercase tracking-wide font-light drop-shadow-md">Universities</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-medium text-white drop-shadow-lg">5+</div>
-              <div className="text-sm text-white uppercase tracking-wide font-light drop-shadow-md">Divisions</div>
+              <div className="text-3xl font-medium text-white drop-shadow-lg">1</div>
+              <div className="text-sm text-white uppercase tracking-wide font-light drop-shadow-md">Mission</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-medium text-white drop-shadow-lg">100%</div>

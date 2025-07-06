@@ -30,13 +30,13 @@ const Divisions = () => {
         {
           name: "Martin Mcconkey",
           role: "Co-Founder, Investment Banking Team Lead",
-          image: "/lovable-uploads/9f515637-25c7-49ce-8b13-73b6692d851e.png",
+          image: "/lovable-uploads/23024191-d064-4241-b944-1d9f4059fda4.png",
           linkedin: "https://www.linkedin.com/in/martinmcco/"
         },
         {
           name: "Jennifer Peter",
           role: "Co-Founder, Investment Banking Team Lead",
-          image: "/lovable-uploads/9f515637-25c7-49ce-8b13-73b6692d851e.png",
+          image: "/lovable-uploads/4bfb4cdd-66d1-4386-9c34-0e6ad77e2942.png",
           linkedin: "https://www.linkedin.com/in/jennifer-peter/"
         }
       ],
@@ -64,13 +64,13 @@ const Divisions = () => {
         {
           name: "Mihai Posea",
           role: "Co-Founder, Venture Capital Division Lead",
-          image: "/lovable-uploads/10c15f47-5eaf-4bcf-8cce-31aba76c761a.png",
+          image: "/lovable-uploads/cb395d90-db83-407e-b156-34ce4233c03c.png",
           linkedin: "https://www.linkedin.com/in/mihaiposea/"
         },
         {
           name: "Gabriel Pogrin",
           role: "Co-Founder, Venture Capital Division Lead",
-          image: "/lovable-uploads/10c15f47-5eaf-4bcf-8cce-31aba76c761a.png",
+          image: "/lovable-uploads/08a0a9dc-6935-4d9e-aad6-639a687b315e.png",
           linkedin: "https://www.linkedin.com/in/gabrielpogrin/"
         }
       ],

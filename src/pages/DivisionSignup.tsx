@@ -54,9 +54,9 @@ const DivisionSignup = () => {
 
   if (!division) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Division Not Found</h1>
+          <h1 className="text-2xl font-bold mb-4 text-white">Division Not Found</h1>
           <Button onClick={() => navigate('/')}>Return Home</Button>
         </div>
       </div>
@@ -76,26 +76,26 @@ const DivisionSignup = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <div className="border-b border-border bg-card/50">
+      <div className="border-b border-gray-800 bg-black/90">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Button
             variant="ghost"
             onClick={() => navigate('/')}
-            className="mb-4"
+            className="mb-4 text-yellow-400 hover:text-yellow-300 hover:bg-yellow-400/10"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </Button>
           <div className="text-center space-y-4">
             <div className="flex items-center justify-center space-x-4">
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                <division.icon className="h-6 w-6 text-accent" />
+              <div className="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center">
+                <division.icon className="h-6 w-6 text-yellow-400" />
               </div>
               <div>
-                <h1 className="text-3xl sm:text-4xl font-bold">{division.title}</h1>
-                <p className="text-accent font-medium">{division.subtitle}</p>
+                <h1 className="text-3xl sm:text-4xl font-bold text-white">{division.title}</h1>
+                <p className="text-yellow-400 font-medium">{division.subtitle}</p>
               </div>
             </div>
           </div>
@@ -107,21 +107,21 @@ const DivisionSignup = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Division Info */}
             <div className="space-y-6">
-              <Card className="bg-card border-border">
+              <Card className="bg-gray-900 border-gray-800">
                 <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
+                  <CardTitle className="flex items-center space-x-2 text-white">
                     <span>About This Division</span>
                     <Badge className={division.color}>Active</Badge>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-muted-foreground">{division.description}</p>
+                  <p className="text-gray-300">{division.description}</p>
                   
                   <div>
-                    <h4 className="font-semibold mb-3">Requirements</h4>
+                    <h4 className="font-semibold mb-3 text-white">Requirements</h4>
                     <ul className="space-y-2">
                       {division.requirements.map((req, index) => (
-                        <li key={index} className="text-sm text-muted-foreground">
+                        <li key={index} className="text-sm text-gray-300">
                           • {req}
                         </li>
                       ))}
@@ -130,10 +130,10 @@ const DivisionSignup = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-accent/5 border-accent/20">
+              <Card className="bg-yellow-400/5 border-yellow-400/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-2 text-accent">What to Expect</h4>
-                  <ul className="space-y-2 text-sm">
+                  <h4 className="font-semibold mb-2 text-yellow-400">What to Expect</h4>
+                  <ul className="space-y-2 text-sm text-gray-300">
                     <li>• Hands-on projects with real-world applications</li>
                     <li>• Mentorship from industry professionals</li>
                     <li>• Networking opportunities with peers and alumni</li>
@@ -144,21 +144,21 @@ const DivisionSignup = () => {
             </div>
 
             {/* Application Form */}
-            <Card className="bg-card border-border">
+            <Card className="bg-gray-900 border-gray-800">
               <CardHeader>
-                <CardTitle>Join Our Team</CardTitle>
-                <p className="text-muted-foreground">Tell us about yourself and why you're interested</p>
+                <CardTitle className="text-white">Join Our Team</CardTitle>
+                <p className="text-gray-300">Tell us about yourself and why you're interested</p>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Full Name</label>
+                      <label className="text-sm font-medium text-white">Full Name</label>
                       <div className="relative">
-                        <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                        <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                         <Input
                           placeholder="Your full name"
-                          className="pl-10"
+                          className="pl-10 bg-gray-800 border-gray-700 text-white placeholder-gray-400"
                           value={formData.name}
                           onChange={(e) => handleInputChange('name', e.target.value)}
                           required
@@ -167,13 +167,13 @@ const DivisionSignup = () => {
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Email</label>
+                      <label className="text-sm font-medium text-white">Email</label>
                       <div className="relative">
-                        <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                        <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                         <Input
                           type="email"
                           placeholder="your.email@university.ca"
-                          className="pl-10"
+                          className="pl-10 bg-gray-800 border-gray-700 text-white placeholder-gray-400"
                           value={formData.email}
                           onChange={(e) => handleInputChange('email', e.target.value)}
                           required
@@ -184,12 +184,12 @@ const DivisionSignup = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">University</label>
+                      <label className="text-sm font-medium text-white">University</label>
                       <div className="relative">
-                        <GraduationCap className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                        <GraduationCap className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                         <Input
                           placeholder="Laurier / Waterloo"
-                          className="pl-10"
+                          className="pl-10 bg-gray-800 border-gray-700 text-white placeholder-gray-400"
                           value={formData.university}
                           onChange={(e) => handleInputChange('university', e.target.value)}
                           required
@@ -198,9 +198,10 @@ const DivisionSignup = () => {
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Program & Year</label>
+                      <label className="text-sm font-medium text-white">Program & Year</label>
                       <Input
                         placeholder="e.g., BBA Finance, 3rd Year"
+                        className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
                         value={formData.program}
                         onChange={(e) => handleInputChange('program', e.target.value)}
                         required
@@ -209,20 +210,20 @@ const DivisionSignup = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Relevant Experience</label>
+                    <label className="text-sm font-medium text-white">Relevant Experience</label>
                     <Textarea
                       placeholder="Tell us about any relevant coursework, internships, projects, or extracurricular activities..."
-                      className="min-h-[100px]"
+                      className="min-h-[100px] bg-gray-800 border-gray-700 text-white placeholder-gray-400"
                       value={formData.experience}
                       onChange={(e) => handleInputChange('experience', e.target.value)}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Why are you interested in this division?</label>
+                    <label className="text-sm font-medium text-white">Why are you interested in this division?</label>
                     <Textarea
                       placeholder="What motivates you to join our team? What do you hope to learn and contribute?"
-                      className="min-h-[120px]"
+                      className="min-h-[120px] bg-gray-800 border-gray-700 text-white placeholder-gray-400"
                       value={formData.motivation}
                       onChange={(e) => handleInputChange('motivation', e.target.value)}
                       required
@@ -231,7 +232,7 @@ const DivisionSignup = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                    className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold"
                   >
                     Submit Application
                   </Button>
