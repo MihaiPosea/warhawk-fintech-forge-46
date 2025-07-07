@@ -34,7 +34,7 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-4">
           <div className="space-y-6">
             <h3 className="text-2xl font-bold">Bridging Excellence Across Universities</h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -74,7 +74,7 @@ const About = () => {
           </div>
 
           <div className="relative">
-            <div className="flex items-start justify-center p-8 mt-8">
+            <div className="flex items-center justify-center p-8">
               <img 
                 src="/lovable-uploads/3af49b36-b4ff-4f97-a73a-27e50bcdf01a.png" 
                 alt="Warhawk Capital Logo"
