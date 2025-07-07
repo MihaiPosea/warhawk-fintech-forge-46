@@ -18,15 +18,14 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black" />
       
       {/* White border frame */}
-      <div className="absolute inset-8 border-8 border-white rounded-lg" />
+      <div className="absolute inset-6 border-12 border-white rounded-lg" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           {/* Main Heading */}
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight drop-shadow-lg">
-              <div className="text-white">WARHAWK</div>
-              <div className="text-accent">CAPITAL</div>
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-white drop-shadow-lg">
+              Warhawk Capital
             </h1>
             <p className="text-xl sm:text-2xl text-white max-w-3xl mx-auto leading-relaxed font-light drop-shadow-md">
               The bridge connecting top finance talent across{' '}
