@@ -26,9 +26,9 @@ const Hero = () => {
       {/* White border frame */}
       <div className="absolute inset-4 border-16 border-white rounded-lg" />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-center min-h-screen">
         <div className="space-y-8">
-          {/* Main Heading */}
+          {/* Main Heading - Centered */}
           <div className="space-y-4">
             <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-white drop-shadow-lg">
               Warhawk Capital
@@ -45,23 +45,7 @@ const Hero = () => {
             Warhawk Capital unites top students from Laurier and Waterloo to gain hands-on experience in competitive areas of finance. Through specialized divisions and a shared standard of excellence, we're building a community of future leaders.
           </p>
 
-          {/* Stats - Made even larger and more prominent */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto pt-6 pb-6">
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-2">2</div>
-              <div className="text-sm sm:text-base text-white uppercase tracking-wide font-medium drop-shadow-md">Universities</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-2">1</div>
-              <div className="text-sm sm:text-base text-white uppercase tracking-wide font-medium drop-shadow-md">Mission</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-2">100%</div>
-              <div className="text-sm sm:text-base text-white uppercase tracking-wide font-medium drop-shadow-md">Hands-On</div>
-            </div>
-          </div>
-
-          {/* CTA Buttons - Moved below stats */}
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" onClick={() => scrollToSection('divisions')} className="bg-foreground hover:bg-foreground/90 text-background px-8 py-3 text-lg font-light group rounded-full">
               Explore Divisions
@@ -71,9 +55,27 @@ const Hero = () => {
               Learn More
             </Button>
           </div>
+        </div>
+
+        {/* Stats - Moved to bottom */}
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2">2</div>
+              <div className="text-xs sm:text-sm text-white uppercase tracking-wide font-medium drop-shadow-md">Universities</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2">1</div>
+              <div className="text-xs sm:text-sm text-white uppercase tracking-wide font-medium drop-shadow-md">Mission</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2">100%</div>
+              <div className="text-xs sm:text-sm text-white uppercase tracking-wide font-medium drop-shadow-md">Hands-On</div>
+            </div>
+          </div>
 
           {/* Est. 2025 */}
-          <div className="text-sm text-white/60 uppercase tracking-wider">
+          <div className="text-sm text-white/60 uppercase tracking-wider mt-6">
             Est. 2025
           </div>
         </div>
