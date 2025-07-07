@@ -1,5 +1,5 @@
 
-import { Building, Mail } from 'lucide-react';
+import { Building } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,7 +19,7 @@ const Footer = () => {
   return (
     <footer className="bg-card/50 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
@@ -71,20 +71,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div className="space-y-4">
-            <h4 className="font-medium">Contact</h4>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground font-light">
-                <Building className="h-4 w-4" />
-                <span>Laurier & Waterloo</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground font-light">
-                <Mail className="h-4 w-4" />
-                <span>info@warhawkcapital.com</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-left">
