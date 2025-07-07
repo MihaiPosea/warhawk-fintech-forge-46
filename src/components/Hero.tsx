@@ -33,12 +33,10 @@ const Hero = () => {
             <p className="text-lg sm:text-xl text-white/80 font-light drop-shadow-md uppercase tracking-widest">
               Welcome to
             </p>
-            <div className="space-y-2">
-              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-white drop-shadow-lg">
-                <span className="block">Warhawk</span>
-                <span className="block bg-gradient-to-r from-yellow-300 via-yellow-200 to-white bg-clip-text text-transparent">
-                  Capital
-                </span>
+            <div className="space-y-3">
+              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight drop-shadow-lg">
+                <span className="text-white">WARHAWK </span>
+                <span className="text-yellow-400">CAPITAL</span>
               </h1>
               <p className="text-xl sm:text-2xl text-yellow-300 font-medium drop-shadow-md tracking-wide">
                 Student-Led Investment Fund
