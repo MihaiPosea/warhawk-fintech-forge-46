@@ -44,27 +44,27 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* Stats - Moved higher and larger */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
+          {/* Stats - Moved lower and tighter spacing */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mt-16">
             <div className="text-center">
-              <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2 font-montserrat">2</div>
+              <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-1 font-montserrat">2</div>
               <div className="text-sm sm:text-base lg:text-lg text-white uppercase tracking-wide font-medium drop-shadow-md font-montserrat">Universities</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2 font-montserrat">1</div>
+              <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-1 font-montserrat">1</div>
               <div className="text-sm sm:text-base lg:text-lg text-white uppercase tracking-wide font-medium drop-shadow-md font-montserrat">Mission</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2 font-montserrat">100%</div>
+              <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-1 font-montserrat">100%</div>
               <div className="text-sm sm:text-base lg:text-lg text-white uppercase tracking-wide font-medium drop-shadow-md font-montserrat">Hands-On</div>
             </div>
           </div>
 
         </div>
 
-        {/* CTA Buttons - Moved lower and larger */}
-        <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 w-full">
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        {/* CTA Buttons - Moved higher and tighter spacing */}
+        <div className="absolute bottom-48 left-1/2 transform -translate-x-1/2 w-full">
+          <div className="flex flex-col sm:flex-row gap-2 justify-center items-center">
             <Button size="lg" onClick={() => scrollToSection('divisions')} className="bg-foreground hover:bg-foreground/90 text-background px-7 py-3 text-base font-light group rounded-full font-montserrat">
               Explore Divisions
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -75,7 +75,7 @@ const Hero = () => {
           </div>
 
           {/* Est. 2025 */}
-          <div className="text-sm text-white/60 uppercase tracking-wider mt-5 font-montserrat">
+          <div className="text-sm text-white/60 uppercase tracking-wider mt-4 font-montserrat">
             Est. 2025
           </div>
         </div>
