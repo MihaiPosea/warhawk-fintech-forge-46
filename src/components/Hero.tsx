@@ -30,20 +30,20 @@ const Hero = () => {
         <div className="space-y-8">
           {/* Main Heading - Enhanced and Dynamic */}
           <div className="space-y-6">
-            <p className="text-lg sm:text-xl text-white/80 font-light drop-shadow-md uppercase tracking-widest">
+            <p className="text-lg sm:text-xl text-white/80 font-light drop-shadow-md uppercase tracking-widest font-bahnschrift">
               Welcome to
             </p>
             <div className="space-y-3">
-              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight drop-shadow-lg">
+              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight drop-shadow-lg font-bahnschrift">
                 <span className="text-white">WARHAWK </span>
                 <span className="text-yellow-400">CAPITAL</span>
               </h1>
-              <p className="text-xl sm:text-2xl text-yellow-300 font-medium drop-shadow-md tracking-wide">
+              <p className="text-xl sm:text-2xl text-yellow-300 font-medium drop-shadow-md tracking-wide font-bahnschrift">
                 Student-Led Investment Fund
               </p>
             </div>
-            <p className="text-lg sm:text-xl text-white max-w-4xl mx-auto leading-relaxed font-light drop-shadow-md">
-              Bridging top finance talent from Laurier and Waterloo through hands-on experience and a shared standard of excellence.
+            <p className="text-lg sm:text-xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-md font-bahnschrift">
+              Warhawk Capital is the student-led fund bridging top finance talent from Laurier and Waterloo through hands-on experience and a shared standard of excellence.
             </p>
           </div>
 
