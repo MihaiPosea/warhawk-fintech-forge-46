@@ -33,11 +33,11 @@ const About = () => {
   return (
     <section id="about" className="section-padding bg-secondary/20">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center space-y-4 mb-4">
+        <div className="text-left space-y-4 mb-4">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
             About <span className="gradient-text">Warhawk</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl">
             Developing future finance leaders through innovative collaboration and hands-on experience
           </p>
         </div>
@@ -79,8 +79,8 @@ const About = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <Card key={index} className="card-hover bg-card border-border">
-              <CardContent className="p-6 text-center space-y-4">
-                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto">
+              <CardContent className="p-6 text-left space-y-4">
+                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
                   <feature.icon className="h-6 w-6 text-foreground" />
                 </div>
                 <h4 className="font-semibold">{feature.title}</h4>

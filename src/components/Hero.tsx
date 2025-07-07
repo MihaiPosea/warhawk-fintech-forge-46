@@ -26,7 +26,7 @@ const Hero = () => {
       {/* White border frame */}
       <div className="absolute inset-4 border-16 border-white rounded-lg" />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-center min-h-screen">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left flex flex-col justify-center min-h-screen">
         <div className="space-y-7">
           {/* Main Heading - Enhanced and Dynamic */}
           <div className="space-y-5">
@@ -39,22 +39,22 @@ const Hero = () => {
                 <span className="text-yellow-400">CAPITAL</span>
               </h1>
             </div>
-            <p className="text-lg sm:text-xl lg:text-2xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-md font-inter">
+            <p className="text-lg sm:text-xl lg:text-2xl text-white max-w-4xl leading-relaxed drop-shadow-md font-inter">
               Warhawk Capital is the student-led fund bridging top finance talent from Laurier and Waterloo through hands-on experience and a shared standard of excellence.
             </p>
           </div>
 
           {/* Stats - Moved lower and tighter spacing */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mt-16">
-            <div className="text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mt-16">
+            <div className="text-left">
               <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-1 font-inter">2</div>
               <div className="text-sm sm:text-base lg:text-lg text-white uppercase tracking-wide font-medium drop-shadow-md font-inter">Universities</div>
             </div>
-            <div className="text-center">
+            <div className="text-left">
               <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-1 font-inter">1</div>
               <div className="text-sm sm:text-base lg:text-lg text-white uppercase tracking-wide font-medium drop-shadow-md font-inter">Mission</div>
             </div>
-            <div className="text-center">
+            <div className="text-left">
               <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-1 font-inter">100%</div>
               <div className="text-sm sm:text-base lg:text-lg text-white uppercase tracking-wide font-medium drop-shadow-md font-inter">Hands-On</div>
             </div>
@@ -64,7 +64,7 @@ const Hero = () => {
 
         {/* CTA Buttons - Moved higher and tighter spacing */}
         <div className="absolute bottom-48 left-1/2 transform -translate-x-1/2 w-full">
-          <div className="flex flex-col sm:flex-row gap-2 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-2 justify-start items-start">
             <Button size="lg" onClick={() => scrollToSection('divisions')} className="bg-foreground hover:bg-foreground/90 text-background px-7 py-3 text-base font-light group rounded-full font-inter">
               Explore Divisions
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

@@ -87,7 +87,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center">
+        <div className="border-t border-border mt-8 pt-8 text-left">
           <p className="text-sm text-muted-foreground font-light">
             © {currentYear} warhawk student capital. All rights reserved.
           </p>

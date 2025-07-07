@@ -62,14 +62,14 @@ const Showcase = () => {
       <section id="showcase" className="section-padding">
         
         <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 mb-16">
+          <div className="text-left space-y-4 mb-16">
             <div className="text-sm font-semibold text-primary tracking-wider uppercase mb-4">
               Venture Capital Division
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold scroll-fade-in">
               Startup <span className="gradient-text">Showcase</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-4xl">
               Discover innovative startups partnered with our Venture Capital Division. 
               These companies represent the future of technology and innovation, seeking 
               talented students for internships, co-founder opportunities, and full-time positions.
@@ -77,7 +77,7 @@ const Showcase = () => {
           </div>
 
           {/* Update Notice */}
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-12 text-center">
+          <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-12 text-left">
             <h3 className="text-lg font-semibold text-primary mb-2">Updates in Progress</h3>
             <p className="text-muted-foreground">
               We're working on bringing you exciting startup opportunities. Check back soon for featured companies.
@@ -141,10 +141,10 @@ const Showcase = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center space-y-6">
+          <div className="text-left space-y-6">
             <div className="space-y-2">
               <h3 className="text-2xl font-bold">Partner with Warhawk</h3>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl">
                 Are you a startup looking for talented students? Join our showcase and connect 
                 with the next generation of finance and technology leaders.
               </p>
@@ -164,7 +164,7 @@ const Showcase = () => {
       {/* Coming Soon Divisions Section */}
       <section className="section-padding bg-secondary/20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 mb-12">
+          <div className="text-left space-y-4 mb-12">
             <h3 className="text-2xl font-bold scroll-fade-in">Coming Soon</h3>
             <p className="text-muted-foreground">
               Expanding our expertise across additional finance sectors

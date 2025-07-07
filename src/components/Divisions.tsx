@@ -146,7 +146,7 @@ const Divisions = () => {
   return (
     <section id="divisions" className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center space-y-4 mb-16">
+        <div className="text-left space-y-4 mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold animate-fade-in">
             Our <span className="gradient-text">Divisions</span>
           </h2>
@@ -256,8 +256,8 @@ const Divisions = () => {
                   <h5 className="font-semibold mb-3">Meet Our Founders</h5>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {division.founders.map((founder, idx) => (
-                      <div key={idx} className="text-center space-y-2">
-                        <div className="w-20 h-20 mx-auto rounded-full border-2 border-accent/20 overflow-hidden">
+                      <div key={idx} className="text-left space-y-2">
+                        <div className="w-20 h-20 rounded-full border-2 border-accent/20 overflow-hidden">
                           <img 
                             src={founder.image} 
                             alt={founder.name}
