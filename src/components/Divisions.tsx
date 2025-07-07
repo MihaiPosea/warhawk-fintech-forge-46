@@ -148,7 +148,7 @@ const Divisions = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-left space-y-4 mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold animate-fade-in">
-            <span className="text-foreground">Meet</span> <span className="gradient-text">Our Divisions</span>
+            <span className="text-foreground">Meet</span> <span className="gradient-text">Our Divisions.</span>
           </h2>
           <div className="w-full h-px bg-border"></div>
         </div>
