@@ -35,14 +35,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <div className={`w-10 h-10 backdrop-blur-sm border rounded-full flex items-center justify-center transition-colors duration-300 ${
-            isScrolled 
-              ? 'bg-foreground/10 border-gray-300' 
-              : 'bg-white/10 border-white/20'
-          }`}>
-            <span className={`font-medium text-sm transition-colors duration-300 ${
-              isScrolled ? 'text-foreground' : 'text-white'
-            }`}>WC</span>
+          <div className="w-10 h-10 flex items-center justify-center">
+            <img 
+              src={isScrolled ? "/lovable-uploads/28f76174-d061-41a8-b608-210923654cc4.png" : "/lovable-uploads/3be7179d-6ccd-423c-b8be-72cddea6b6ae.png"}
+              alt="Warhawk Capital Logo"
+              className="w-8 h-8 object-contain transition-all duration-300"
+            />
           </div>
           <div className="flex flex-col">
             <span className={`font-medium text-xl leading-tight font-inter transition-colors duration-300 ${
