@@ -32,6 +32,7 @@ const About = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
             About <span className="gradient-text">Warhawk</span>
           </h2>
+          <div className="w-full h-px bg-border"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-4">
