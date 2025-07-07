@@ -60,12 +60,6 @@ const Reports = () => {
             }
           ].map((report, index) => (
             <Card key={index} className="bg-card border-border opacity-60 relative">
-              <div className="absolute top-2 right-2">
-                <Badge variant="outline" className="text-xs flex items-center gap-1">
-                  <Building2 className="h-3 w-3" />
-                  {report.division}
-                </Badge>
-              </div>
               <CardContent className="p-6 text-left space-y-4">
                 <div className="w-12 h-12 bg-muted/20 rounded-lg flex items-center justify-center">
                   <report.icon className="h-6 w-6 text-muted-foreground" />
