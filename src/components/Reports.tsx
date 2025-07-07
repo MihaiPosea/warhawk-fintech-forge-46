@@ -10,7 +10,7 @@ const Reports = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-left space-y-8 mb-8">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
-            <span className="gradient-text">Explore our work...</span>
+            <span className="text-foreground">Explore</span> <span className="gradient-text">our work.</span>
           </h2>
           <div className="w-full h-px bg-border"></div>
           <div className="text-xl font-semibold text-primary tracking-wider uppercase mb-4">
