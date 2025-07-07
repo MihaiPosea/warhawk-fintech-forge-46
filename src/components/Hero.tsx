@@ -25,8 +25,9 @@ const Hero = () => {
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight text-white drop-shadow-lg">
-              <span className="block text-slate-50">WARHAWK</span>
-              <span className="block font-extralight">CAPITAL</span>
+              <span className="bg-gradient-to-r from-white via-yellow-300 to-white bg-clip-text text-transparent animate-pulse">
+                WARHAWK CAPITAL
+              </span>
             </h1>
             <p className="text-xl sm:text-2xl text-white max-w-3xl mx-auto leading-relaxed font-light drop-shadow-md">
               The bridge connecting top finance talent across{' '}
@@ -41,18 +42,18 @@ const Hero = () => {
           </p>
 
           {/* Stats - Made even larger and more prominent */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto pt-8 pb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto pt-6 pb-6">
             <div className="text-center">
-              <div className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white drop-shadow-lg mb-3">2</div>
-              <div className="text-xl sm:text-2xl text-white uppercase tracking-wide font-medium drop-shadow-md">Universities</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-2">2</div>
+              <div className="text-sm sm:text-base text-white uppercase tracking-wide font-medium drop-shadow-md">Universities</div>
             </div>
             <div className="text-center">
-              <div className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white drop-shadow-lg mb-3">1</div>
-              <div className="text-xl sm:text-2xl text-white uppercase tracking-wide font-medium drop-shadow-md">Mission</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-2">1</div>
+              <div className="text-sm sm:text-base text-white uppercase tracking-wide font-medium drop-shadow-md">Mission</div>
             </div>
             <div className="text-center">
-              <div className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white drop-shadow-lg mb-3">100%</div>
-              <div className="text-xl sm:text-2xl text-white uppercase tracking-wide font-medium drop-shadow-md">Hands-On</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-2">100%</div>
+              <div className="text-sm sm:text-base text-white uppercase tracking-wide font-medium drop-shadow-md">Hands-On</div>
             </div>
           </div>
 

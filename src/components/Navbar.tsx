@@ -24,7 +24,6 @@ const Navbar = () => {
           </div>
           <div className="flex flex-col">
             <span className="font-medium text-lg text-foreground leading-tight">warhawk capital</span>
-            <span className="text-xs text-accent leading-tight">est. 2024</span>
           </div>
         </div>
 
