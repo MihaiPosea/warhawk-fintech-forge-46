@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Rocket, Upload, Globe, DollarSign, Users, Target } from 'lucide-react';
+import { ArrowLeft, Rocket, Upload, Globe, Calendar, MapPin, Target, Users, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -10,17 +10,15 @@ import { useState } from 'react';
 const SubmitStartup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    companyName: '',
-    founderName: '',
-    email: '',
-    website: '',
+    startupName: '',
+    logo: null as File | null,
     industry: '',
-    stage: '',
-    fundingAmount: '',
+    foundingYear: '',
+    location: '',
+    oneLiner: '',
     description: '',
-    businessModel: '',
-    traction: '',
-    teamSize: ''
+    website: '',
+    needs: ''
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -30,32 +28,38 @@ const SubmitStartup = () => {
     navigate('/');
   };
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: string | File | null) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    handleInputChange('logo', file);
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="border-b border-gray-800 bg-black/90">
+      <div className="border-b border-gray-200 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Button
             variant="ghost"
             onClick={() => navigate('/')}
-            className="mb-4 text-yellow-400 hover:text-yellow-300 hover:bg-yellow-400/10"
+            className="mb-6 text-gray-600 hover:text-gray-900"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </Button>
-          <div className="text-center space-y-4">
-            <div className="flex items-center justify-center space-x-4">
-              <div className="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center">
-                <Rocket className="h-6 w-6 text-yellow-400" />
-              </div>
-              <div>
-                <h1 className="text-3xl sm:text-4xl font-bold text-white">Submit Your Startup</h1>
-                <p className="text-yellow-400 font-medium">Get Advisory & Investment Support</p>
-              </div>
+          
+          <div className="text-center space-y-6">
+            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto">
+              <Rocket className="h-8 w-8 text-yellow-600" />
+            </div>
+            <div>
+              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Submit Your Startup</h1>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Join our startup showcase and connect with top finance talent from Laurier and Waterloo
+              </p>
             </div>
           </div>
         </div>
@@ -63,184 +67,176 @@ const SubmitStartup = () => {
 
       <div className="section-padding">
         <div className="max-w-4xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Information Section */}
-            <div className="space-y-6">
-              <Card className="bg-gray-900 border-gray-800">
-                <CardHeader>
-                  <CardTitle className="text-white">Venture Capital Support</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-gray-300">
-                    Our Venture Capital division provides comprehensive support to early-stage startups through strategic advisory, due diligence, and network connections.
-                  </p>
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center p-4 bg-gray-800 rounded-lg">
-                      <Target className="h-8 w-8 text-yellow-400 mx-auto mb-2" />
-                      <h4 className="font-semibold text-white">Strategic Advisory</h4>
-                      <p className="text-sm text-gray-300">Business strategy & growth planning</p>
-                    </div>
-                    <div className="text-center p-4 bg-gray-800 rounded-lg">
-                      <Users className="h-8 w-8 text-yellow-400 mx-auto mb-2" />
-                      <h4 className="font-semibold text-white">Network Access</h4>
-                      <p className="text-sm text-gray-300">Connect with investors & mentors</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-yellow-400/5 border-yellow-400/20">
-                <CardContent className="p-6">
-                  <h4 className="font-semibold mb-2 text-yellow-400">What We Look For</h4>
-                  <ul className="space-y-2 text-sm text-gray-300">
-                    <li>• Innovative business models with scalable potential</li>
-                    <li>• Strong founding teams with relevant experience</li>
-                    <li>• Clear market opportunity and competitive advantage</li>
-                    <li>• Early traction or proof of concept</li>
-                    <li>• Alignment with our investment thesis</li>
-                  </ul>
-                </CardContent>
-              </Card>
+          {/* Disclaimer */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 flex items-start space-x-3">
+            <AlertCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="text-sm text-blue-800">
+                <strong>Application Notice:</strong> All startup submissions are subject to review and approval 
+                by our Venture Capital Division before being featured in our showcase.
+              </p>
             </div>
+          </div>
 
-            {/* Submission Form */}
-            <Card className="bg-gray-900 border-gray-800">
+          <form onSubmit={handleSubmit} className="space-y-8">
+            {/* Basic Information */}
+            <Card className="bg-white border border-gray-200 shadow-sm">
               <CardHeader>
-                <CardTitle className="text-white">Startup Details</CardTitle>
-                <p className="text-gray-300">Tell us about your startup and vision</p>
+                <CardTitle className="text-xl text-gray-900">Basic Information</CardTitle>
               </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-white">Company Name</label>
-                      <Input
-                        placeholder="Your startup name"
-                        className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                        value={formData.companyName}
-                        onChange={(e) => handleInputChange('companyName', e.target.value)}
-                        required
-                      />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-white">Founder Name</label>
-                      <Input
-                        placeholder="Your full name"
-                        className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                        value={formData.founderName}
-                        onChange={(e) => handleInputChange('founderName', e.target.value)}
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-white">Email</label>
-                      <Input
-                        type="email"
-                        placeholder="founder@startup.com"
-                        className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                        value={formData.email}
-                        onChange={(e) => handleInputChange('email', e.target.value)}
-                        required
-                      />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-white">Website</label>
-                      <div className="relative">
-                        <Globe className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                        <Input
-                          placeholder="https://yourstartup.com"
-                          className="pl-10 bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                          value={formData.website}
-                          onChange={(e) => handleInputChange('website', e.target.value)}
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-white">Industry</label>
-                      <Input
-                        placeholder="e.g., FinTech, HealthTech, AI"
-                        className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                        value={formData.industry}
-                        onChange={(e) => handleInputChange('industry', e.target.value)}
-                        required
-                      />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-white">Stage</label>
-                      <Input
-                        placeholder="e.g., Pre-seed, Seed, Series A"
-                        className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                        value={formData.stage}
-                        onChange={(e) => handleInputChange('stage', e.target.value)}
-                        required
-                      />
-                    </div>
-                  </div>
-
+              <CardContent className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-white">Funding Amount Sought</label>
-                    <div className="relative">
-                      <DollarSign className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                      <Input
-                        placeholder="e.g., $100K, $1M"
-                        className="pl-10 bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                        value={formData.fundingAmount}
-                        onChange={(e) => handleInputChange('fundingAmount', e.target.value)}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-white">Business Description</label>
-                    <Textarea
-                      placeholder="Describe your business, the problem you're solving, and your solution..."
-                      className="min-h-[100px] bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                      value={formData.description}
-                      onChange={(e) => handleInputChange('description', e.target.value)}
+                    <label className="text-sm font-medium text-gray-700">Name of Startup *</label>
+                    <Input
+                      placeholder="Your startup name"
+                      className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                      value={formData.startupName}
+                      onChange={(e) => handleInputChange('startupName', e.target.value)}
                       required
                     />
                   </div>
-
+                  
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-white">Business Model</label>
-                    <Textarea
-                      placeholder="How do you make money? What's your revenue model?"
-                      className="min-h-[80px] bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                      value={formData.businessModel}
-                      onChange={(e) => handleInputChange('businessModel', e.target.value)}
+                    <label className="text-sm font-medium text-gray-700">Industry / Sector *</label>
+                    <Input
+                      placeholder="e.g., HealthTech, FinTech, Consumer Goods"
+                      className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                      value={formData.industry}
+                      onChange={(e) => handleInputChange('industry', e.target.value)}
+                      required
                     />
                   </div>
+                </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-white">Traction & Metrics</label>
-                    <Textarea
-                      placeholder="Share key metrics, user growth, revenue, partnerships, etc."
-                      className="min-h-[80px] bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-                      value={formData.traction}
-                      onChange={(e) => handleInputChange('traction', e.target.value)}
-                    />
+                    <label className="text-sm font-medium text-gray-700">Founding Year *</label>
+                    <div className="relative">
+                      <Calendar className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                      <Input
+                        placeholder="2024"
+                        className="pl-10 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                        value={formData.foundingYear}
+                        onChange={(e) => handleInputChange('foundingYear', e.target.value)}
+                        required
+                      />
+                    </div>
                   </div>
+                  
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-700">Location *</label>
+                    <div className="relative">
+                      <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                      <Input
+                        placeholder="City, Country"
+                        className="pl-10 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                        value={formData.location}
+                        onChange={(e) => handleInputChange('location', e.target.value)}
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
 
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold"
-                  >
-                    Submit Startup
-                  </Button>
-                </form>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">Logo</label>
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-gray-400 transition-colors">
+                    <Upload className="h-8 w-8 text-gray-400 mx-auto mb-2" />
+                    <p className="text-sm text-gray-600 mb-2">Upload your startup logo</p>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleFileChange}
+                      className="hidden"
+                      id="logo-upload"
+                    />
+                    <label
+                      htmlFor="logo-upload"
+                      className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 cursor-pointer"
+                    >
+                      Choose File
+                    </label>
+                    {formData.logo && (
+                      <p className="text-sm text-green-600 mt-2">✓ {formData.logo.name}</p>
+                    )}
+                  </div>
+                </div>
               </CardContent>
             </Card>
-          </div>
+
+            {/* Venture Summary */}
+            <Card className="bg-white border border-gray-200 shadow-sm">
+              <CardHeader>
+                <CardTitle className="text-xl text-gray-900">Venture Summary</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">One-liner Pitch *</label>
+                  <div className="relative">
+                    <Target className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <Input
+                      placeholder="e.g., Uber for rural logistics"
+                      className="pl-10 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                      value={formData.oneLiner}
+                      onChange={(e) => handleInputChange('oneLiner', e.target.value)}
+                      required
+                    />
+                  </div>
+                  <p className="text-xs text-gray-500">Concise description of what your startup does</p>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">Short Description *</label>
+                  <Textarea
+                    placeholder="2-3 sentences about what your startup does, the problem you're solving, and your solution..."
+                    className="min-h-[100px] border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                    value={formData.description}
+                    onChange={(e) => handleInputChange('description', e.target.value)}
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">Website</label>
+                  <div className="relative">
+                    <Globe className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <Input
+                      placeholder="https://yourstartup.com"
+                      className="pl-10 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                      value={formData.website}
+                      onChange={(e) => handleInputChange('website', e.target.value)}
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">What do you need?</label>
+                  <div className="relative">
+                    <Users className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <Textarea
+                      placeholder="e.g., Software Engineers, Marketing Specialists, Co-founder (CTO), Product Managers..."
+                      className="pl-10 pt-10 min-h-[80px] border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                      value={formData.needs}
+                      onChange={(e) => handleInputChange('needs', e.target.value)}
+                    />
+                  </div>
+                  <p className="text-xs text-gray-500">What roles or expertise are you looking for?</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Submit Button */}
+            <div className="flex justify-center">
+              <Button 
+                type="submit" 
+                size="lg"
+                className="px-12 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold"
+              >
+                Submit Application
+              </Button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

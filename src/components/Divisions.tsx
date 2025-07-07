@@ -1,7 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { Building2, Rocket, BarChart3, Shield, PieChart, TrendingUp, ArrowRight, Linkedin, Target, Users, Award, ChevronDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -81,9 +80,7 @@ const Divisions = () => {
           image: "/lovable-uploads/ddcac406-e02d-4671-bff3-a916584c2c1c.png",
           linkedin: "https://www.linkedin.com/in/jennifer-peter/"
         }
-      ],
-      status: "Active",
-      color: "bg-green-500/10 text-green-400 border-green-500/20"
+      ]
     },
     {
       icon: Rocket,
@@ -137,9 +134,7 @@ const Divisions = () => {
           image: "/lovable-uploads/6c3aa9ac-789b-4edb-a8ef-17fe8a72ef97.png",
           linkedin: "https://www.linkedin.com/in/gabrielpogrin/"
         }
-      ],
-      status: "Active",
-      color: "bg-green-500/10 text-green-400 border-green-500/20"
+      ]
     }
   ];
 
@@ -160,153 +155,146 @@ const Divisions = () => {
           </p>
         </div>
 
-        {/* Current Divisions */}
-        <div className="space-y-8 mb-20">
-          <h3 className="text-3xl font-bold text-center animate-fade-in">Active Divisions</h3>
-          <div className="grid lg:grid-cols-2 gap-8">
-            {currentDivisions.map((division, index) => (
-              <Card key={index} className="card-hover bg-card border-border">
-                <CardHeader className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                      <division.icon className="h-6 w-6 text-accent" />
-                    </div>
-                    <Badge className={division.color}>
-                      {division.status}
-                    </Badge>
+        <div className="grid lg:grid-cols-2 gap-8">
+          {currentDivisions.map((division, index) => (
+            <Card key={index} className="card-hover bg-card border-border">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <division.icon className="h-6 w-6 text-accent" />
                   </div>
-                  <div>
-                    <CardTitle className="text-xl">{division.title}</CardTitle>
-                    <p className="text-sm text-accent font-medium">{division.subtitle}</p>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground">{division.description}</p>
-                  
-                  {/* Collapsible Learn More Section */}
-                  <Collapsible 
-                    open={openSections[division.title]} 
-                    onOpenChange={() => toggleSection(division.title)}
-                  >
-                    <CollapsibleTrigger asChild>
-                      <Button variant="outline" className="w-full justify-between">
-                        Learn More
-                        <ChevronDown className={`h-4 w-4 transition-transform ${openSections[division.title] ? 'rotate-180' : ''}`} />
-                      </Button>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="space-y-4 mt-4 bg-secondary/30 rounded-lg p-4">
-                      {division.learnMore.whyWIBS && (
+                </div>
+                <div>
+                  <CardTitle className="text-xl">{division.title}</CardTitle>
+                  <p className="text-sm text-accent font-medium">{division.subtitle}</p>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-muted-foreground">{division.description}</p>
+                
+                {/* Collapsible Learn More Section */}
+                <Collapsible 
+                  open={openSections[division.title]} 
+                  onOpenChange={() => toggleSection(division.title)}
+                >
+                  <CollapsibleTrigger asChild>
+                    <Button variant="outline" className="w-full justify-between">
+                      Learn More
+                      <ChevronDown className={`h-4 w-4 transition-transform ${openSections[division.title] ? 'rotate-180' : ''}`} />
+                    </Button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="space-y-4 mt-4 bg-secondary/30 rounded-lg p-4">
+                    {division.learnMore.whyWIBS && (
+                      <div className="space-y-3">
+                        <h6 className="font-medium text-sm">{division.learnMore.whyWIBS.title}</h6>
                         <div className="space-y-3">
-                          <h6 className="font-medium text-sm">{division.learnMore.whyWIBS.title}</h6>
-                          <div className="space-y-3">
-                            {division.learnMore.whyWIBS.points.map((point, idx) => (
-                              <div key={idx} className="flex gap-3">
-                                <div className="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                  <point.icon className="h-4 w-4 text-accent" />
-                                </div>
-                                <div>
-                                  <p className="font-medium text-sm">{point.title}</p>
-                                  <p className="text-xs text-muted-foreground">{point.description}</p>
-                                </div>
+                          {division.learnMore.whyWIBS.points.map((point, idx) => (
+                            <div key={idx} className="flex gap-3">
+                              <div className="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <point.icon className="h-4 w-4 text-accent" />
                               </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {division.learnMore.description && (
-                        <div className="space-y-2">
-                          <p className="text-sm text-muted-foreground">{division.learnMore.description}</p>
-                          {division.learnMore.quote && (
-                            <p className="text-sm font-medium italic">"{division.learnMore.quote}"</p>
-                          )}
-                        </div>
-                      )}
-
-                      {division.learnMore.process && (
-                        <div className="space-y-2">
-                          <h6 className="font-medium text-sm">{division.learnMore.process.title}</h6>
-                          <div className="grid grid-cols-1 gap-2">
-                            {division.learnMore.process.steps.map((step, idx) => (
-                              <div key={idx} className="flex gap-2 items-start">
-                                <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-                                  <span className="text-xs font-bold text-black">{step.step}</span>
-                                </div>
-                                <div>
-                                  <p className="font-medium text-xs">{step.title}</p>
-                                  <p className="text-xs text-muted-foreground">{step.description}</p>
-                                </div>
+                              <div>
+                                <p className="font-medium text-sm">{point.title}</p>
+                                <p className="text-xs text-muted-foreground">{point.description}</p>
                               </div>
-                            ))}
-                          </div>
+                            </div>
+                          ))}
                         </div>
-                      )}
+                      </div>
+                    )}
 
-                      {division.learnMore.reportsProjects && (
-                        <div className="space-y-2">
-                          <h6 className="font-medium text-sm">{division.learnMore.reportsProjects.title}</h6>
-                          <div className="grid grid-cols-1 gap-2">
-                            {division.learnMore.reportsProjects.projects.map((project, idx) => (
-                              <div key={idx} className="bg-white/50 rounded-lg p-2">
-                                <p className="font-medium text-xs">{project.title}</p>
-                                <p className="text-xs text-muted-foreground">{project.description}</p>
+                    {division.learnMore.description && (
+                      <div className="space-y-2">
+                        <p className="text-sm text-muted-foreground">{division.learnMore.description}</p>
+                        {division.learnMore.quote && (
+                          <p className="text-sm font-medium italic">"{division.learnMore.quote}"</p>
+                        )}
+                      </div>
+                    )}
+
+                    {division.learnMore.process && (
+                      <div className="space-y-2">
+                        <h6 className="font-medium text-sm">{division.learnMore.process.title}</h6>
+                        <div className="grid grid-cols-1 gap-2">
+                          {division.learnMore.process.steps.map((step, idx) => (
+                            <div key={idx} className="flex gap-2 items-start">
+                              <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="text-xs font-bold text-black">{step.step}</span>
                               </div>
-                            ))}
-                          </div>
+                              <div>
+                                <p className="font-medium text-xs">{step.title}</p>
+                                <p className="text-xs text-muted-foreground">{step.description}</p>
+                              </div>
+                            </div>
+                          ))}
                         </div>
-                      )}
+                      </div>
+                    )}
 
-                      {division.learnMore.differentiation && (
-                        <div className="pt-2 border-t border-border">
-                          <h6 className="font-medium text-sm mb-1">Differentiation</h6>
-                          <p className="text-xs text-muted-foreground">{division.learnMore.differentiation}</p>
+                    {division.learnMore.reportsProjects && (
+                      <div className="space-y-2">
+                        <h6 className="font-medium text-sm">{division.learnMore.reportsProjects.title}</h6>
+                        <div className="grid grid-cols-1 gap-2">
+                          {division.learnMore.reportsProjects.projects.map((project, idx) => (
+                            <div key={idx} className="bg-white/50 rounded-lg p-2">
+                              <p className="font-medium text-xs">{project.title}</p>
+                              <p className="text-xs text-muted-foreground">{project.description}</p>
+                            </div>
+                          ))}
                         </div>
-                      )}
-                    </CollapsibleContent>
-                  </Collapsible>
+                      </div>
+                    )}
 
-                  {/* Founders Section */}
-                  <div>
-                    <h5 className="font-semibold mb-3">Meet Our Founders</h5>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {division.founders.map((founder, idx) => (
-                        <div key={idx} className="text-center space-y-2">
-                          <div className="w-16 h-16 mx-auto rounded-full border-2 border-accent/20 overflow-hidden">
-                            <img 
-                              src={founder.image} 
-                              alt={founder.name}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div>
-                            <p className="font-medium text-sm">{founder.name}</p>
-                            <p className="text-xs text-muted-foreground">{founder.role}</p>
-                            <a 
-                              href={founder.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center space-x-1 text-accent hover:text-accent/80 transition-colors mt-1"
-                            >
-                              <Linkedin className="h-3 w-3" />
-                              <span className="text-xs">LinkedIn</span>
-                            </a>
-                          </div>
+                    {division.learnMore.differentiation && (
+                      <div className="pt-2 border-t border-border">
+                        <h6 className="font-medium text-sm mb-1">Differentiation</h6>
+                        <p className="text-xs text-muted-foreground">{division.learnMore.differentiation}</p>
+                      </div>
+                    )}
+                  </CollapsibleContent>
+                </Collapsible>
+
+                {/* Founders Section */}
+                <div>
+                  <h5 className="font-semibold mb-3">Meet Our Founders</h5>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {division.founders.map((founder, idx) => (
+                      <div key={idx} className="text-center space-y-2">
+                        <div className="w-16 h-16 mx-auto rounded-full border-2 border-accent/20 overflow-hidden">
+                          <img 
+                            src={founder.image} 
+                            alt={founder.name}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
-                      ))}
-                    </div>
+                        <div>
+                          <p className="font-medium text-sm">{founder.name}</p>
+                          <p className="text-xs text-muted-foreground">{founder.role}</p>
+                          <a 
+                            href={founder.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center space-x-1 text-accent hover:text-accent/80 transition-colors mt-1"
+                          >
+                            <Linkedin className="h-3 w-3" />
+                            <span className="text-xs">LinkedIn</span>
+                          </a>
+                        </div>
+                      </div>
+                    ))}
                   </div>
+                </div>
 
-                  <Button 
-                    onClick={() => handleJoinDivision(division.title)}
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground group"
-                  >
-                    Join Division
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                <Button 
+                  onClick={() => handleJoinDivision(division.title)}
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground group"
+                >
+                  Join Division
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

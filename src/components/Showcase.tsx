@@ -2,7 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Building, Users, Calendar, ArrowRight, BarChart3, Shield, PieChart, TrendingUp } from 'lucide-react';
+import { Building, Users, Calendar, ArrowRight, BarChart3, Shield, PieChart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Showcase = () => {
@@ -62,7 +62,7 @@ const Showcase = () => {
       <section id="showcase" className="section-padding">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold scroll-fade-in">
               Startup <span className="gradient-text">Showcase</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
@@ -161,7 +161,7 @@ const Showcase = () => {
       <section className="section-padding bg-secondary/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h3 className="text-2xl font-bold">Coming Soon</h3>
+            <h3 className="text-2xl font-bold scroll-fade-in">Coming Soon</h3>
             <p className="text-muted-foreground">
               Expanding our expertise across additional finance sectors
             </p>
