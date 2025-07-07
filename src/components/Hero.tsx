@@ -39,42 +39,43 @@ const Hero = () => {
                 <span className="text-yellow-400">CAPITAL</span>
               </h1>
             </div>
-            <p className="text-lg sm:text-xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-md font-bahnschrift">
+            <p className="text-lg sm:text-xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-md font-montserrat">
               Warhawk Capital is the student-led fund bridging top finance talent from Laurier and Waterloo through hands-on experience and a shared standard of excellence.
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
+          {/* Stats - Moved higher */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto mt-8">
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2">2</div>
-              <div className="text-xs sm:text-sm text-white uppercase tracking-wide font-medium drop-shadow-md">Universities</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2 font-montserrat">2</div>
+              <div className="text-xs sm:text-sm text-white uppercase tracking-wide font-medium drop-shadow-md font-montserrat">Universities</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2">1</div>
-              <div className="text-xs sm:text-sm text-white uppercase tracking-wide font-medium drop-shadow-md">Mission</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2 font-montserrat">1</div>
+              <div className="text-xs sm:text-sm text-white uppercase tracking-wide font-medium drop-shadow-md font-montserrat">Mission</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2">100%</div>
-              <div className="text-xs sm:text-sm text-white uppercase tracking-wide font-medium drop-shadow-md">Hands-On</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2 font-montserrat">100%</div>
+              <div className="text-xs sm:text-sm text-white uppercase tracking-wide font-medium drop-shadow-md font-montserrat">Hands-On</div>
             </div>
           </div>
+
         </div>
 
         {/* CTA Buttons - Moved lower */}
         <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 w-full">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" onClick={() => scrollToSection('divisions')} className="bg-foreground hover:bg-foreground/90 text-background px-8 py-3 text-lg font-light group rounded-full">
+            <Button size="lg" onClick={() => scrollToSection('divisions')} className="bg-foreground hover:bg-foreground/90 text-background px-8 py-3 text-lg font-light group rounded-full font-montserrat">
               Explore Divisions
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" onClick={() => scrollToSection('about')} className="bg-white/90 border-white text-foreground hover:bg-white hover:text-foreground px-8 py-3 text-lg font-light rounded-full">
+            <Button size="lg" variant="outline" onClick={() => scrollToSection('about')} className="bg-white/90 border-white text-foreground hover:bg-white hover:text-foreground px-8 py-3 text-lg font-light rounded-full font-montserrat">
               Learn More
             </Button>
           </div>
 
           {/* Est. 2025 */}
-          <div className="text-sm text-white/60 uppercase tracking-wider mt-6">
+          <div className="text-sm text-white/60 uppercase tracking-wider mt-6 font-montserrat">
             Est. 2025
           </div>
         </div>

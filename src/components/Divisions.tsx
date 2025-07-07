@@ -150,9 +150,6 @@ const Divisions = () => {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold animate-fade-in">
             Our <span className="gradient-text">Divisions</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive finance education across multiple specializations
-          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
