@@ -65,10 +65,10 @@ const About = () => {
             </Button>
           </div>
 
-            <div className="relative">
-            <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center p-12">
+          <div className="relative">
+            <div className="flex items-center justify-center p-12">
               <img 
-                src="/lovable-uploads/973c839b-e257-4a2f-add8-e0d544be1635.png" 
+                src="/lovable-uploads/3af49b36-b4ff-4f97-a73a-27e50bcdf01a.png" 
                 alt="Warhawk Capital Logo"
                 className="w-3/4 h-3/4 object-contain"
               />
