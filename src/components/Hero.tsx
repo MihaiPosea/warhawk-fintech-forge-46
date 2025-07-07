@@ -44,20 +44,7 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" onClick={() => scrollToSection('divisions')} className="bg-foreground hover:bg-foreground/90 text-background px-8 py-3 text-lg font-light group rounded-full">
-              Explore Divisions
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button size="lg" variant="outline" onClick={() => scrollToSection('about')} className="bg-white/90 border-white text-foreground hover:bg-white hover:text-foreground px-8 py-3 text-lg font-light rounded-full">
-              Learn More
-            </Button>
-          </div>
-        </div>
-
-        {/* Stats - Moved higher */}
-        <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 w-full">
+          {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="text-center">
               <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2">2</div>
@@ -71,6 +58,19 @@ const Hero = () => {
               <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2">100%</div>
               <div className="text-xs sm:text-sm text-white uppercase tracking-wide font-medium drop-shadow-md">Hands-On</div>
             </div>
+          </div>
+        </div>
+
+        {/* CTA Buttons - Moved lower */}
+        <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 w-full">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button size="lg" onClick={() => scrollToSection('divisions')} className="bg-foreground hover:bg-foreground/90 text-background px-8 py-3 text-lg font-light group rounded-full">
+              Explore Divisions
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button size="lg" variant="outline" onClick={() => scrollToSection('about')} className="bg-white/90 border-white text-foreground hover:bg-white hover:text-foreground px-8 py-3 text-lg font-light rounded-full">
+              Learn More
+            </Button>
           </div>
 
           {/* Est. 2025 */}
