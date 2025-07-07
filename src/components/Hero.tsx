@@ -27,36 +27,36 @@ const Hero = () => {
       <div className="absolute inset-4 border-16 border-white rounded-lg" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-center min-h-screen">
-        <div className="space-y-8">
+        <div className="space-y-7">
           {/* Main Heading - Enhanced and Dynamic */}
-          <div className="space-y-6">
-            <p className="text-xl sm:text-2xl lg:text-3xl text-white/80 font-light drop-shadow-md uppercase tracking-widest font-bahnschrift">
+          <div className="space-y-5">
+            <p className="text-lg sm:text-xl lg:text-2xl text-white/80 font-light drop-shadow-md uppercase tracking-widest font-bahnschrift">
               Welcome to
             </p>
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight drop-shadow-lg font-bahnschrift leading-none">
+              <h1 className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight drop-shadow-lg font-bahnschrift leading-none">
                 <span className="text-white">WARHAWK </span>
                 <span className="text-yellow-400">CAPITAL</span>
               </h1>
             </div>
-            <p className="text-xl sm:text-2xl lg:text-3xl text-white max-w-5xl mx-auto leading-relaxed drop-shadow-md font-montserrat">
+            <p className="text-lg sm:text-xl lg:text-2xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-md font-montserrat">
               Warhawk Capital is the student-led fund bridging top finance talent from Laurier and Waterloo through hands-on experience and a shared standard of excellence.
             </p>
           </div>
 
           {/* Stats - Moved higher and larger */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-3 font-montserrat">2</div>
-              <div className="text-base sm:text-lg lg:text-xl text-white uppercase tracking-wide font-medium drop-shadow-md font-montserrat">Universities</div>
+              <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2 font-montserrat">2</div>
+              <div className="text-sm sm:text-base lg:text-lg text-white uppercase tracking-wide font-medium drop-shadow-md font-montserrat">Universities</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-3 font-montserrat">1</div>
-              <div className="text-base sm:text-lg lg:text-xl text-white uppercase tracking-wide font-medium drop-shadow-md font-montserrat">Mission</div>
+              <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2 font-montserrat">1</div>
+              <div className="text-sm sm:text-base lg:text-lg text-white uppercase tracking-wide font-medium drop-shadow-md font-montserrat">Mission</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-3 font-montserrat">100%</div>
-              <div className="text-base sm:text-lg lg:text-xl text-white uppercase tracking-wide font-medium drop-shadow-md font-montserrat">Hands-On</div>
+              <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2 font-montserrat">100%</div>
+              <div className="text-sm sm:text-base lg:text-lg text-white uppercase tracking-wide font-medium drop-shadow-md font-montserrat">Hands-On</div>
             </div>
           </div>
 
@@ -64,18 +64,18 @@ const Hero = () => {
 
         {/* CTA Buttons - Moved lower and larger */}
         <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 w-full">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" onClick={() => scrollToSection('divisions')} className="bg-foreground hover:bg-foreground/90 text-background px-8 py-3 text-lg font-light group rounded-full font-montserrat">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <Button size="lg" onClick={() => scrollToSection('divisions')} className="bg-foreground hover:bg-foreground/90 text-background px-7 py-3 text-base font-light group rounded-full font-montserrat">
               Explore Divisions
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" onClick={() => scrollToSection('about')} className="bg-white/90 border-white text-foreground hover:bg-white hover:text-foreground px-8 py-3 text-lg font-light rounded-full font-montserrat">
+            <Button size="lg" variant="outline" onClick={() => scrollToSection('about')} className="bg-white/90 border-white text-foreground hover:bg-white hover:text-foreground px-7 py-3 text-base font-light rounded-full font-montserrat">
               Learn More
             </Button>
           </div>
 
           {/* Est. 2025 */}
-          <div className="text-base text-white/60 uppercase tracking-wider mt-6 font-montserrat">
+          <div className="text-sm text-white/60 uppercase tracking-wider mt-5 font-montserrat">
             Est. 2025
           </div>
         </div>
