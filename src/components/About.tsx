@@ -33,23 +33,23 @@ const About = () => {
             About <span className="gradient-text">Warhawk</span>
           </h2>
           {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mt-8">
             <div className="text-left">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-1 font-inter">2</div>
-              <div className="text-sm sm:text-base text-muted-foreground uppercase tracking-wide font-medium font-inter">Universities</div>
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-2 font-inter">2</div>
+              <div className="text-lg sm:text-xl text-muted-foreground uppercase tracking-wide font-medium font-inter">Universities</div>
             </div>
             <div className="text-left">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-1 font-inter">1</div>
-              <div className="text-sm sm:text-base text-muted-foreground uppercase tracking-wide font-medium font-inter">Mission</div>
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-2 font-inter">1</div>
+              <div className="text-lg sm:text-xl text-muted-foreground uppercase tracking-wide font-medium font-inter">Mission</div>
             </div>
             <div className="text-left">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-1 font-inter">100%</div>
-              <div className="text-sm sm:text-base text-muted-foreground uppercase tracking-wide font-medium font-inter">Hands-On</div>
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-2 font-inter">100%</div>
+              <div className="text-lg sm:text-xl text-muted-foreground uppercase tracking-wide font-medium font-inter">Hands-On</div>
             </div>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-4 mt-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-4 mt-4">
           <div className="space-y-6">
             <h3 className="text-2xl font-bold">Bridging Excellence Across Universities</h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
