@@ -30,20 +30,16 @@ const Hero = () => {
         <div className="space-y-8">
           {/* Main Heading - Centered */}
           <div className="space-y-4">
+            <p className="text-lg sm:text-xl text-white/80 font-light drop-shadow-md">
+              Welcome to
+            </p>
             <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-white drop-shadow-lg">
               Warhawk Capital
             </h1>
-            <p className="text-xl sm:text-2xl text-white max-w-3xl mx-auto leading-relaxed font-light drop-shadow-md">
-              The bridge connecting top finance talent across{' '}
-              <span className="font-medium text-yellow-300">Laurier</span> and{' '}
-              <span className="font-medium text-yellow-300">Waterloo</span>
+            <p className="text-lg sm:text-xl text-white max-w-4xl mx-auto leading-relaxed font-light drop-shadow-md">
+              Warhawk Capital is the student-led fund bridging top finance talent from Laurier and Waterloo through hands-on experience and a shared standard of excellence.
             </p>
           </div>
-
-          {/* Description */}
-          <p className="text-lg text-white max-w-4xl mx-auto leading-relaxed font-light drop-shadow-md">
-            Warhawk Capital unites top students from Laurier and Waterloo to gain hands-on experience in competitive areas of finance. Through specialized divisions and a shared standard of excellence, we're building a community of future leaders.
-          </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -57,8 +53,8 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Stats - Moved to bottom */}
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-full">
+        {/* Stats - Moved higher */}
+        <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 w-full">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="text-center">
               <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-2">2</div>
