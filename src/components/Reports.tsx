@@ -12,7 +12,7 @@ const Reports = () => {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
             <span className="gradient-text">Explore our work...</span>
           </h2>
-          <div className="text-sm font-semibold text-primary tracking-wider uppercase mb-4">
+          <div className="text-base font-semibold text-primary tracking-wider uppercase mb-4">
             Investment Banking Division
           </div>
         </div>

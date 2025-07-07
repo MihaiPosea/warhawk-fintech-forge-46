@@ -66,11 +66,11 @@ const About = () => {
           </div>
 
           <div className="relative">
-            <div className="flex items-center justify-center p-12">
+            <div className="flex items-center justify-center p-8">
               <img 
                 src="/lovable-uploads/3af49b36-b4ff-4f97-a73a-27e50bcdf01a.png" 
                 alt="Warhawk Capital Logo"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain scale-150"
               />
             </div>
           </div>
