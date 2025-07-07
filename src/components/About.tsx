@@ -1,7 +1,7 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Users, Target, TrendingUp, Award, ArrowRight } from 'lucide-react';
+import { Users, Target, Award, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const About = () => {
@@ -17,11 +17,6 @@ const About = () => {
       icon: Target,
       title: "Multi-Strategy Focus",
       description: "Structured like a modern fund with Investment Banking and Venture Capital arms"
-    },
-    {
-      icon: TrendingUp,
-      title: "Real-World Experience",
-      description: "Hands-on experience in trading, modeling, due diligence, and risk analysis"
     },
     {
       icon: Award,
@@ -76,7 +71,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <Card key={index} className="card-hover bg-card border-border">
               <CardContent className="p-6 text-left space-y-4">
