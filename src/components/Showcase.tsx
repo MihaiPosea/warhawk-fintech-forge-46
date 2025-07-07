@@ -59,14 +59,18 @@ const Showcase = () => {
   return (
     <>
       {/* Startup Showcase Section */}
-      <section id="showcase" className="section-padding">
-        <div className="max-w-7xl mx-auto">
+      <section id="showcase" className="section-padding relative">
+        {/* Vertical Division Title */}
+        <div className="absolute left-0 top-0 h-full flex items-center">
+          <div className="transform -rotate-90 whitespace-nowrap">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary/30 tracking-wider">
+              VENTURE CAPITAL
+            </h2>
+          </div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto pl-16 sm:pl-20 lg:pl-24">
           <div className="text-center space-y-4 mb-16">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <div className="bg-primary/10 border border-primary/20 rounded-full px-4 py-2">
-                <span className="text-sm font-medium text-primary">Venture Capital Division</span>
-              </div>
-            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold scroll-fade-in">
               Startup <span className="gradient-text">Showcase</span>
             </h2>
