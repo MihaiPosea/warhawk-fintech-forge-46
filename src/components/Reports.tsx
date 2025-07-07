@@ -8,12 +8,14 @@ const Reports = () => {
     <section className="section-padding bg-secondary/20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
+          <div className="inline-flex items-center gap-2 mb-4">
+            <div className="bg-primary/10 border border-primary/20 rounded-full px-4 py-2">
+              <span className="text-sm font-medium text-primary">Investment Banking Division</span>
+            </div>
+          </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
             <span className="gradient-text">Explore our work...</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            Discover the cutting-edge research and analysis produced by our Investment Banking Division
-          </p>
         </div>
 
         {/* Update Notice */}

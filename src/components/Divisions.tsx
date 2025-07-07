@@ -260,7 +260,7 @@ const Divisions = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {division.founders.map((founder, idx) => (
                       <div key={idx} className="text-center space-y-2">
-                        <div className="w-16 h-16 mx-auto rounded-full border-2 border-accent/20 overflow-hidden">
+                        <div className="w-20 h-20 mx-auto rounded-full border-2 border-accent/20 overflow-hidden">
                           <img 
                             src={founder.image} 
                             alt={founder.name}
