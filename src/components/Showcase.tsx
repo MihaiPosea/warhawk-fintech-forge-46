@@ -63,7 +63,7 @@ const Showcase = () => {
         
         <div className="max-w-7xl mx-auto">
           <div className="text-left space-y-4 mb-16">
-            <div className="text-sm font-semibold text-primary tracking-wider uppercase mb-4">
+            <div className="text-xl font-semibold text-primary tracking-wider uppercase mb-4">
               Venture Capital Division
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold scroll-fade-in">
