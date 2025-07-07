@@ -14,8 +14,14 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden p-8">
-      {/* Clean black background */}
-      <div className="absolute inset-0 bg-black" />
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('/lovable-uploads/e680c993-0542-42e8-889d-82d07a206755.png')` }}
+      />
+      
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40" />
       
       {/* White border frame */}
       <div className="absolute inset-6 border-12 border-white rounded-lg" />
