@@ -33,7 +33,7 @@ const About = () => {
   return (
     <section id="about" className="section-padding bg-secondary/20">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center space-y-4 mb-16">
+        <div className="text-center space-y-4 mb-10">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
             About <span className="gradient-text">Warhawk</span>
           </h2>
@@ -42,7 +42,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-10">
           <div className="space-y-6">
             <h3 className="text-2xl font-bold">Bridging Excellence Across Universities</h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
