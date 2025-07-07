@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/40" />
       
       {/* White border frame */}
-      <div className="absolute inset-6 border-12 border-white rounded-lg" />
+      <div className="absolute inset-4 border-16 border-white rounded-lg" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
