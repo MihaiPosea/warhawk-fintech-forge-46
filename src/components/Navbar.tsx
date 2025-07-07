@@ -45,7 +45,7 @@ const Navbar = () => {
             }`}>WC</span>
           </div>
           <div className="flex flex-col">
-            <span className={`font-medium text-xl leading-tight font-montserrat transition-colors duration-300 ${
+            <span className={`font-medium text-xl leading-tight font-inter transition-colors duration-300 ${
               isScrolled ? 'text-foreground' : 'text-white'
             }`}>warhawk capital</span>
           </div>
@@ -55,7 +55,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-8">
           <button 
             onClick={() => scrollToSection('about')}
-            className={`transition-colors text-base font-light font-montserrat ${
+            className={`transition-colors text-base font-light font-inter ${
               isScrolled 
                 ? 'text-muted-foreground hover:text-foreground' 
                 : 'text-white/80 hover:text-white'
@@ -65,7 +65,7 @@ const Navbar = () => {
           </button>
           <button 
             onClick={() => scrollToSection('divisions')}
-            className={`transition-colors text-base font-light font-montserrat ${
+            className={`transition-colors text-base font-light font-inter ${
               isScrolled 
                 ? 'text-muted-foreground hover:text-foreground' 
                 : 'text-white/80 hover:text-white'
@@ -75,7 +75,7 @@ const Navbar = () => {
           </button>
           <button 
             onClick={() => scrollToSection('showcase')}
-            className={`transition-colors text-base font-light font-montserrat ${
+            className={`transition-colors text-base font-light font-inter ${
               isScrolled 
                 ? 'text-muted-foreground hover:text-foreground' 
                 : 'text-white/80 hover:text-white'
@@ -85,7 +85,7 @@ const Navbar = () => {
           </button>
           <button 
             onClick={() => scrollToSection('contact')}
-            className={`transition-colors text-base font-light font-montserrat ${
+            className={`transition-colors text-base font-light font-inter ${
               isScrolled 
                 ? 'text-muted-foreground hover:text-foreground' 
                 : 'text-white/80 hover:text-white'
@@ -95,7 +95,7 @@ const Navbar = () => {
           </button>
           <Button 
             onClick={() => scrollToSection('contact')}
-            className={`backdrop-blur-sm border rounded-full px-6 py-2 text-base font-light font-montserrat transition-all duration-300 ${
+            className={`backdrop-blur-sm border rounded-full px-6 py-2 text-base font-light font-inter transition-all duration-300 ${
               isScrolled 
                 ? 'bg-accent hover:bg-accent/90 text-accent-foreground border-accent' 
                 : 'bg-white/10 border-white/20 hover:bg-white/20 text-white'
@@ -132,7 +132,7 @@ const Navbar = () => {
           <div className="space-y-2 p-4">
             <button 
               onClick={() => scrollToSection('about')}
-              className={`block w-full text-left px-3 py-2 transition-colors text-base font-light font-montserrat ${
+              className={`block w-full text-left px-3 py-2 transition-colors text-base font-light font-inter ${
                 isScrolled 
                   ? 'text-muted-foreground hover:text-foreground' 
                   : 'text-white/80 hover:text-white'
@@ -142,7 +142,7 @@ const Navbar = () => {
             </button>
             <button 
               onClick={() => scrollToSection('divisions')}
-              className={`block w-full text-left px-3 py-2 transition-colors text-base font-light font-montserrat ${
+              className={`block w-full text-left px-3 py-2 transition-colors text-base font-light font-inter ${
                 isScrolled 
                   ? 'text-muted-foreground hover:text-foreground' 
                   : 'text-white/80 hover:text-white'
@@ -152,7 +152,7 @@ const Navbar = () => {
             </button>
             <button 
               onClick={() => scrollToSection('showcase')}
-              className={`block w-full text-left px-3 py-2 transition-colors text-base font-light font-montserrat ${
+              className={`block w-full text-left px-3 py-2 transition-colors text-base font-light font-inter ${
                 isScrolled 
                   ? 'text-muted-foreground hover:text-foreground' 
                   : 'text-white/80 hover:text-white'
@@ -162,7 +162,7 @@ const Navbar = () => {
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className={`block w-full text-left px-3 py-2 transition-colors text-base font-light font-montserrat ${
+              className={`block w-full text-left px-3 py-2 transition-colors text-base font-light font-inter ${
                 isScrolled 
                   ? 'text-muted-foreground hover:text-foreground' 
                   : 'text-white/80 hover:text-white'
@@ -173,7 +173,7 @@ const Navbar = () => {
             <div className="px-3 py-2">
               <Button 
                 onClick={() => scrollToSection('contact')}
-                className={`w-full backdrop-blur-sm border rounded-full text-base font-light font-montserrat transition-all duration-300 ${
+                className={`w-full backdrop-blur-sm border rounded-full text-base font-light font-inter transition-all duration-300 ${
                   isScrolled 
                     ? 'bg-accent hover:bg-accent/90 text-accent-foreground border-accent' 
                     : 'bg-white/10 border-white/20 hover:bg-white/20 text-white'
