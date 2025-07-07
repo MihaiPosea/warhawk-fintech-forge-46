@@ -32,9 +32,21 @@ const About = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
             About <span className="gradient-text">Warhawk</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl">
-            Developing future finance leaders through innovative collaboration and hands-on experience
-          </p>
+          {/* Stats */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mt-6">
+            <div className="text-left">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-1 font-inter">2</div>
+              <div className="text-sm sm:text-base text-muted-foreground uppercase tracking-wide font-medium font-inter">Universities</div>
+            </div>
+            <div className="text-left">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-1 font-inter">1</div>
+              <div className="text-sm sm:text-base text-muted-foreground uppercase tracking-wide font-medium font-inter">Mission</div>
+            </div>
+            <div className="text-left">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-1 font-inter">100%</div>
+              <div className="text-sm sm:text-base text-muted-foreground uppercase tracking-wide font-medium font-inter">Hands-On</div>
+            </div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-4 mt-8">

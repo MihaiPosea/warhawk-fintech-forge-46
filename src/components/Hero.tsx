@@ -44,26 +44,10 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* Stats - Moved lower and tighter spacing */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mt-16">
-            <div className="text-center">
-              <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-1 font-inter">2</div>
-              <div className="text-sm sm:text-base lg:text-lg text-white uppercase tracking-wide font-medium drop-shadow-md font-inter">Universities</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-1 font-inter">1</div>
-              <div className="text-sm sm:text-base lg:text-lg text-white uppercase tracking-wide font-medium drop-shadow-md font-inter">Mission</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg mb-1 font-inter">100%</div>
-              <div className="text-sm sm:text-base lg:text-lg text-white uppercase tracking-wide font-medium drop-shadow-md font-inter">Hands-On</div>
-            </div>
-          </div>
-
         </div>
 
-        {/* CTA Buttons - Moved higher and tighter spacing */}
-        <div className="absolute bottom-48 left-1/2 transform -translate-x-1/2 w-full">
+        {/* CTA Buttons - Moved higher to fill gap */}
+        <div className="absolute bottom-60 left-1/2 transform -translate-x-1/2 w-full">
           <div className="flex flex-col sm:flex-row gap-2 justify-center items-center">
             <Button size="lg" onClick={() => scrollToSection('divisions')} className="bg-foreground hover:bg-foreground/90 text-background px-7 py-3 text-base font-light group rounded-full font-inter">
               Explore Divisions
