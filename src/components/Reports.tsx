@@ -5,15 +5,7 @@ import { FileText, TrendingUp, Award, Building, Building2 } from 'lucide-react';
 
 const Reports = () => {
   return (
-    <section className="section-padding bg-secondary/20 relative">
-      {/* Vertical Division Title */}
-      <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-10">
-        <div className="transform -rotate-90 whitespace-nowrap">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary/20 tracking-wider">
-            INVESTMENT BANKING
-          </h2>
-        </div>
-      </div>
+    <section className="section-padding bg-secondary/20">
       
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
