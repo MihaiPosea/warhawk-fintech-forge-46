@@ -27,9 +27,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding">
+    <section id="contact" className="section-padding py-24">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center space-y-8">
+        <div className="text-center space-y-16 py-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
             The future won't wait. <span className="gradient-text">Step into the Warhawk Way.</span>
           </h2>

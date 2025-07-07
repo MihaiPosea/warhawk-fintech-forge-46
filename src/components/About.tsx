@@ -70,7 +70,7 @@ const About = () => {
               <img 
                 src="/lovable-uploads/3af49b36-b4ff-4f97-a73a-27e50bcdf01a.png" 
                 alt="Warhawk Capital Logo"
-                className="w-3/4 h-3/4 object-contain"
+                className="w-full h-full object-contain"
               />
             </div>
           </div>

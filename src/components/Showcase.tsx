@@ -63,6 +63,9 @@ const Showcase = () => {
         
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-16">
+            <div className="text-sm font-semibold text-primary tracking-wider uppercase mb-4">
+              Venture Capital Division
+            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold scroll-fade-in">
               Startup <span className="gradient-text">Showcase</span>
             </h2>

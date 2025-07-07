@@ -8,7 +8,10 @@ const Reports = () => {
     <section className="section-padding bg-secondary/20">
       
       <div className="max-w-7xl mx-auto">
-        <div className="text-center space-y-4 mb-16">
+        <div className="text-center space-y-4 mb-8">
+          <div className="text-sm font-semibold text-primary tracking-wider uppercase mb-4">
+            Investment Banking Division
+          </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
             <span className="gradient-text">Explore our work...</span>
           </h2>
