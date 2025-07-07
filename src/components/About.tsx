@@ -70,20 +70,20 @@ const About = () => {
         </div>
 
         
-        {/* Stats positioned above feature cards and centered */}
+        {/* Stats as tiles */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-          <div className="text-center">
+          <Card className="text-center p-8 bg-card border-border">
             <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-2 font-inter">2</div>
             <div className="text-lg sm:text-xl text-muted-foreground uppercase tracking-wide font-medium font-inter">Universities</div>
-          </div>
-          <div className="text-center">
+          </Card>
+          <Card className="text-center p-8 bg-card border-border">
             <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-2 font-inter">1</div>
             <div className="text-lg sm:text-xl text-muted-foreground uppercase tracking-wide font-medium font-inter">Mission</div>
-          </div>
-          <div className="text-center">
+          </Card>
+          <Card className="text-center p-8 bg-card border-border">
             <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-2 font-inter">100%</div>
             <div className="text-lg sm:text-xl text-muted-foreground uppercase tracking-wide font-medium font-inter">Hands-On</div>
-          </div>
+          </Card>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
