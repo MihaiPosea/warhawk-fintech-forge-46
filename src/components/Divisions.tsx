@@ -146,7 +146,7 @@ const Divisions = () => {
   return (
     <section id="divisions" className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center space-y-4 mb-16">
+        <div className="text-left space-y-4 mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold animate-fade-in">
             Our <span className="gradient-text">Divisions</span>
           </h2>
