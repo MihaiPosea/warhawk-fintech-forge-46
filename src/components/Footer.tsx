@@ -87,15 +87,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
+        <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground font-light">
             © {currentYear} warhawk student capital. All rights reserved.
           </p>
-          <div className="flex items-center space-x-4 mt-4 sm:mt-0">
-            <span className="text-sm text-muted-foreground font-light">Made with</span>
-            <span className="text-accent">❤️</span>
-            <span className="text-sm text-muted-foreground font-light">by students, for students</span>
-          </div>
         </div>
       </div>
     </footer>
