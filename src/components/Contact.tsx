@@ -33,23 +33,6 @@ const Contact = () => {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
             The future won't wait. <span className="gradient-text">Step into the Warhawk Way.</span>
           </h2>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <Button 
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 group"
-            >
-              Join a Division
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3"
-            >
-              Partner With Us
-            </Button>
-          </div>
         </div>
       </div>
     </section>
