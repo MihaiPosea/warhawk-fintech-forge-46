@@ -70,7 +70,7 @@ const Showcase = () => {
           {/* Black container with white margins */}
           <div className="bg-black text-white rounded-2xl px-6 sm:px-8 lg:px-10 py-16 sm:py-20 lg:py-24">
             <div className="text-left space-y-6 mb-20">
-              <div className="text-2xl font-semibold text-white tracking-wider uppercase mb-6">
+              <div className="text-xl font-semibold text-white tracking-wider uppercase mb-4">
                 Venture Capital Division
               </div>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
@@ -84,7 +84,7 @@ const Showcase = () => {
             </div>
 
             {/* Startup Cards */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div className="grid md:grid-cols-2 gap-12 mb-16">
             {placeholderStartups.map((startup, index) => (
               <Card key={index} className="card-hover bg-white/5 border-white/20 relative overflow-hidden backdrop-blur-sm">
                 {/* Status Overlay - only for "Currently Being Updated" startups */}
@@ -102,9 +102,9 @@ const Showcase = () => {
 
                 <CardHeader className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <div className="w-24 h-24 bg-white/10 rounded-xl flex items-center justify-center overflow-hidden p-4 backdrop-blur-sm border border-white/20">
+                    <div className="w-32 h-32 bg-white/10 rounded-xl flex items-center justify-center overflow-hidden p-6 backdrop-blur-sm border border-white/20">
                       {startup.logo ? (
-                        <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain filter brightness-0 invert" />
+                        <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain" />
                       ) : (
                         <Building className="h-8 w-8 text-white" />
                       )}
@@ -148,7 +148,7 @@ const Showcase = () => {
 
                   <Button 
                     variant="outline" 
-                    className="w-full bg-black border-black text-white hover:bg-gray-900 text-base py-3" 
+                    className="w-full bg-white border-white text-black hover:bg-gray-100 text-base py-3" 
                     disabled={startup.status === "Currently Being Updated"}
                     onClick={() => startup.website && window.open(startup.website, '_blank')}
                   >
@@ -186,7 +186,7 @@ const Showcase = () => {
       <section className="section-padding bg-secondary/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-left space-y-4 mb-12">
-            <h3 className="text-2xl font-bold scroll-fade-in">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold scroll-fade-in">
               <span className="text-foreground">Coming</span> <span className="gradient-text">Soon</span>
             </h3>
             <p className="text-muted-foreground">
