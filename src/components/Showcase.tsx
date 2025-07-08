@@ -105,9 +105,17 @@ const Showcase = () => {
 
                 <CardHeader className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <div className="w-32 h-32 bg-white rounded-xl flex items-center justify-center overflow-hidden p-6">
+                    <div className="w-32 h-32 flex items-center justify-center overflow-hidden p-6">
                       {startup.logo ? (
-                        <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain" />
+                        <img 
+                          src={startup.logo} 
+                          alt={startup.name} 
+                          className="w-full h-full object-contain"
+                          onError={(e) => {
+                            console.error('Image failed to load:', startup.logo);
+                            e.currentTarget.style.display = 'none';
+                          }}
+                        />
                       ) : (
                         <Building className="h-8 w-8 text-white" />
                       )}
