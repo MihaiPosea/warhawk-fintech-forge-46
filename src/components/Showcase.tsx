@@ -70,7 +70,7 @@ const Showcase = () => {
           {/* Black container with white margins */}
           <div className="bg-black text-white rounded-2xl px-8 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-24">
             <div className="text-left space-y-6 mb-20">
-              <div className="text-2xl font-semibold text-accent tracking-wider uppercase mb-6">
+              <div className="text-2xl font-semibold text-white tracking-wider uppercase mb-6">
                 Venture Capital Division
               </div>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
@@ -91,8 +91,8 @@ const Showcase = () => {
                 {startup.status === "Currently Being Updated" && (
                   <div className="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-10">
                     <div className="text-center space-y-2">
-                      <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto">
-                        <Calendar className="h-6 w-6 text-accent" />
+                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto">
+                        <Calendar className="h-6 w-6 text-white" />
                       </div>
                       <p className="font-semibold text-white">Currently Being Updated</p>
                       <p className="text-sm text-white/70">Coming Soon</p>
@@ -106,16 +106,16 @@ const Showcase = () => {
                       {startup.logo ? (
                         <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain filter brightness-0 invert" />
                       ) : (
-                        <Building className="h-8 w-8 text-accent" />
+                        <Building className="h-8 w-8 text-white" />
                       )}
                     </div>
-                    <Badge variant="outline" className="text-sm border-accent text-accent">
+                    <Badge variant="outline" className="text-sm border-white/50 text-white/80">
                       {startup.stage}
                     </Badge>
                   </div>
                   <div>
                     <CardTitle className="text-2xl text-white">{startup.name}</CardTitle>
-                    <p className="text-lg text-accent font-medium mt-2">{startup.industry}</p>
+                    <p className="text-lg text-white/90 font-medium mt-2">{startup.industry}</p>
                     {startup.oneLiner && (
                       <p className="text-sm text-white/80 mt-2 italic">"{startup.oneLiner}"</p>
                     )}
@@ -134,7 +134,7 @@ const Showcase = () => {
                   
                   <div className="space-y-3">
                     <div className="flex items-center space-x-2 text-base">
-                      <Users className="h-5 w-5 text-accent" />
+                      <Users className="h-5 w-5 text-white" />
                       <span className="font-medium text-white">Open Positions:</span>
                     </div>
                     <div className="space-y-2">
@@ -148,7 +148,7 @@ const Showcase = () => {
 
                   <Button 
                     variant="outline" 
-                    className="w-full border-accent text-accent hover:bg-accent hover:text-black text-base py-3" 
+                    className="w-full border-white/50 text-white hover:bg-white hover:text-black text-base py-3" 
                     disabled={startup.status === "Currently Being Updated"}
                     onClick={() => startup.website && window.open(startup.website, '_blank')}
                   >
@@ -169,11 +169,11 @@ const Showcase = () => {
                 with the next generation of finance and technology leaders.
               </p>
             </div>
-            <Button 
-              size="lg"
-              onClick={() => navigate('/submit-startup')}
-              className="bg-accent hover:bg-accent/90 text-black px-10 py-4 group text-lg font-semibold"
-            >
+              <Button 
+                size="lg"
+                onClick={() => navigate('/submit-startup')}
+                className="bg-white hover:bg-white/90 text-black px-10 py-4 group text-lg font-semibold"
+              >
               Submit Your Startup
               <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </Button>
