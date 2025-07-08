@@ -71,18 +71,21 @@ const Showcase = () => {
             <div className="text-xl font-semibold text-primary tracking-wider uppercase mb-4">
               Venture Capital Division
             </div>
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold scroll-fade-in">
-              Startup <span className="gradient-text">Showcase</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl">
-              Discover innovative startups partnered with our Venture Capital Division. 
-              These companies represent the future of technology and innovation, seeking 
-              talented students for internships, co-founder opportunities, and full-time positions.
-            </p>
           </div>
 
           {/* Black container with white margins */}
           <div className="bg-black text-white rounded-2xl px-6 sm:px-8 lg:px-10 py-16 sm:py-20 lg:py-24">
+            <div className="text-left space-y-6 mb-20">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold scroll-fade-in">
+                Startup <span className="gradient-text">Showcase</span>
+              </h2>
+              <p className="text-2xl text-white/80 max-w-5xl leading-relaxed">
+                Discover innovative startups partnered with our Venture Capital Division. 
+                These companies represent the future of technology and innovation, seeking 
+                talented students for internships, co-founder opportunities, and full-time positions.
+              </p>
+            </div>
+
             {/* Startup Cards */}
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               {placeholderStartups.map((startup, index) => (
