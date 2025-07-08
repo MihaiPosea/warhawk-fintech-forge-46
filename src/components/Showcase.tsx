@@ -123,30 +123,21 @@ const Showcase = () => {
                       )}
 
                       <CardContent className="flex flex-col items-center justify-center h-full p-8 text-center">
-                        <div className="w-48 h-48 flex items-center justify-center overflow-hidden p-4 mb-4">
+                        <div className="flex-1 flex items-center justify-center w-full">
                           {startup.logo ? (
                             <img 
                               src={startup.logo} 
                               alt={startup.name} 
-                              className="w-full h-full object-contain"
+                              className="max-w-full max-h-full object-contain"
                               onError={(e) => {
                                 console.error('Image failed to load:', startup.logo);
                                 e.currentTarget.style.display = 'none';
                               }}
                             />
                           ) : (
-                            <Building className="h-16 w-16 text-white" />
+                            <Building className="h-32 w-32 text-white" />
                           )}
                         </div>
-                        
-                        {startup.oneLiner && (
-                          <p className="text-xl font-bold text-white mb-2">{startup.oneLiner}</p>
-                        )}
-                        <p className="text-sm text-white/70 font-medium">{startup.industry}</p>
-                        
-                        <Badge variant="outline" className="text-sm border-white/50 text-white/80 mt-4">
-                          {startup.stage}
-                        </Badge>
                         
                         <p className="text-white/60 text-sm mt-4">Click to learn more</p>
                       </CardContent>
@@ -154,8 +145,20 @@ const Showcase = () => {
 
                     {/* Back Side */}
                     <Card className="absolute inset-0 w-full h-full bg-white/5 border-white/20 backface-hidden rotate-y-180">
-                      <CardContent className="p-6 h-full flex flex-col justify-between">
+                      <CardContent className="flex flex-col justify-center h-full p-8 text-center space-y-6">
                         <div className="space-y-4">
+                          <h3 className="text-2xl font-bold text-white">{startup.name}</h3>
+                          
+                          {startup.oneLiner && (
+                            <p className="text-lg font-semibold text-white/90">{startup.oneLiner}</p>
+                          )}
+                          
+                          <p className="text-base text-white/80">{startup.industry}</p>
+                          
+                          <Badge variant="outline" className="text-sm border-white/50 text-white/80">
+                            {startup.stage}
+                          </Badge>
+                          
                           <p className="text-white/90 text-base leading-relaxed">{startup.description}</p>
                           
                           {startup.location && startup.founded && (
@@ -165,39 +168,37 @@ const Showcase = () => {
                           )}
 
                           {startup.funding && (
-                            <div className="bg-white/10 rounded-lg p-4 border border-white/20">
-                              <div className="text-xl font-bold text-white">{startup.funding}</div>
-                              <div className="text-sm text-white/70">Current Valuation & Funding</div>
+                            <div className="bg-white/10 rounded-lg p-3 border border-white/20">
+                              <div className="text-lg font-bold text-white">{startup.funding}</div>
+                              <div className="text-xs text-white/70">Current Valuation & Funding</div>
                             </div>
                           )}
                           
-                          <div className="space-y-3">
-                            <div className="flex items-center space-x-2 text-base">
-                              <Users className="h-5 w-5 text-white" />
+                          <div className="space-y-2">
+                            <div className="flex items-center justify-center space-x-2 text-sm">
+                              <Users className="h-4 w-4 text-white" />
                               <span className="font-medium text-white">Open Positions:</span>
                             </div>
-                            <div className="space-y-2">
-                              {startup.openings.map((opening, idx) => (
-                                <div key={idx} className="text-base text-white/80 pl-7">
-                                  • {opening}
-                                </div>
-                              ))}
+                            <div className="text-sm text-white/80">
+                              {startup.openings.join(" • ")}
                             </div>
                           </div>
                         </div>
 
-                        <Button 
-                          variant="outline" 
-                          className="w-full bg-white border-white text-black hover:bg-gray-100 text-base py-3 mt-4" 
-                          disabled={startup.status === "Currently Being Updated"}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            startup.website && window.open(startup.website, '_blank');
-                          }}
-                        >
-                          Visit Website
-                          <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
+                        {startup.website && (
+                          <Button 
+                            variant="outline" 
+                            className="bg-white border-white text-black hover:bg-gray-100 text-sm py-2" 
+                            disabled={startup.status === "Currently Being Updated"}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              window.open(startup.website, '_blank');
+                            }}
+                          >
+                            Visit Website
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        )}
                       </CardContent>
                     </Card>
                   </div>
