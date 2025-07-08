@@ -101,7 +101,7 @@ const Showcase = () => {
               {placeholderStartups.map((startup, index) => (
                 <div 
                   key={index} 
-                  className="relative h-96 perspective-1000 cursor-pointer"
+                  className="relative h-[500px] perspective-1000 cursor-pointer"
                   onClick={() => toggleCard(index)}
                 >
                   <div className={`relative w-full h-full transition-transform duration-700 preserve-3d ${
@@ -145,42 +145,42 @@ const Showcase = () => {
 
                     {/* Back Side */}
                     <Card className="absolute inset-0 w-full h-full bg-white/5 border-white/20 backface-hidden rotate-y-180">
-                      <CardContent className="flex flex-col h-full p-4 text-center space-y-3">
-                        <div className="flex-1 flex flex-col justify-center space-y-3">
-                          <h3 className="text-xl font-bold text-white">{startup.name}</h3>
+                      <CardContent className="flex flex-col h-full p-6 text-left space-y-4">
+                        <div className="flex-1 flex flex-col justify-center space-y-4">
+                          <h3 className="text-2xl font-bold text-white">{startup.name}</h3>
                           
                           {startup.oneLiner && (
-                            <p className="text-sm font-semibold text-white/90 leading-tight">{startup.oneLiner}</p>
+                            <p className="text-lg font-semibold text-white/90 leading-tight">{startup.oneLiner}</p>
                           )}
                           
-                          <div className="flex items-center justify-center space-x-3">
-                            <p className="text-sm text-white/80">{startup.industry}</p>
-                            <Badge variant="outline" className="text-xs border-white/50 text-white/80 px-2 py-0.5">
+                          <div className="flex items-center space-x-3">
+                            <p className="text-base text-white/80">{startup.industry}</p>
+                            <Badge variant="outline" className="text-sm border-white/50 text-white/80 px-3 py-1">
                               {startup.stage}
                             </Badge>
                           </div>
                           
-                          <p className="text-white/90 text-sm leading-tight">{startup.description}</p>
+                          <p className="text-white/90 text-base leading-relaxed">{startup.description}</p>
                           
                           {startup.location && startup.founded && (
-                            <div className="text-xs text-white/70">
+                            <div className="text-sm text-white/70">
                               📍 {startup.location} • Founded {startup.founded}
                             </div>
                           )}
 
                           {startup.funding && (
-                            <div className="bg-white/10 rounded-lg p-2 border border-white/20">
-                              <div className="text-sm font-bold text-white">{startup.funding}</div>
-                              <div className="text-xs text-white/70">Current Valuation & Funding</div>
+                            <div className="bg-white/10 rounded-lg p-3 border border-white/20">
+                              <div className="text-lg font-bold text-white">{startup.funding}</div>
+                              <div className="text-sm text-white/70">Current Valuation & Funding</div>
                             </div>
                           )}
                           
-                          <div className="space-y-1">
-                            <div className="flex items-center justify-center space-x-1 text-xs">
-                              <Users className="h-3 w-3 text-white" />
+                          <div className="space-y-2">
+                            <div className="flex items-center space-x-2 text-base">
+                              <Users className="h-4 w-4 text-white" />
                               <span className="font-medium text-white">Open Positions:</span>
                             </div>
-                            <div className="text-xs text-white/80">
+                            <div className="text-base text-white/80">
                               {startup.openings.join(" • ")}
                             </div>
                           </div>
@@ -189,8 +189,7 @@ const Showcase = () => {
                         {startup.website && (
                           <Button 
                             variant="outline" 
-                            size="sm"
-                            className="bg-white border-white text-black hover:bg-gray-100 text-xs py-1.5 mt-2" 
+                            className="bg-white border-white text-black hover:bg-gray-100 text-base py-2 px-4 mt-3" 
                             disabled={startup.status === "Currently Being Updated"}
                             onClick={(e) => {
                               e.stopPropagation();
@@ -198,7 +197,7 @@ const Showcase = () => {
                             }}
                           >
                             Visit Website
-                            <ArrowRight className="ml-1 h-3 w-3" />
+                            <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>
                         )}
                       </CardContent>
