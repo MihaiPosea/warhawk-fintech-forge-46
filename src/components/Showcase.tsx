@@ -10,12 +10,17 @@ const Showcase = () => {
 
   const placeholderStartups = [
     {
-      name: "TechFlow Solutions",
-      industry: "FinTech",
-      stage: "Series A",
-      description: "AI-powered financial analytics platform for institutional investors",
-      openings: ["Software Engineer Intern", "Product Manager", "Data Scientist"],
-      status: "Currently Being Updated"
+      name: "Polarity",
+      industry: "Frontier AI research & deployment",
+      stage: "Pre-seed",
+      description: "Polarity is an autonomous multi-agent engine that maps your whole codebase, understands inter-file dependencies, and fixes technical debt automatically. Developers keep shipping features while Polarity quietly optimizes, documents, and safeguards code quality in every commit; no manual intervention needed.",
+      openings: ["Software Engineer", "AI/ML Engineer", "Product Manager"],
+      status: "Active",
+      logo: "/lovable-uploads/73061e0a-c605-4d2e-8d6c-4fed45ec0659.png",
+      location: "Waterloo, ON",
+      founded: "June 2025",
+      funding: "$153k at $5M valuation",
+      oneLiner: "Autonomously perfects entire codebases, with SOTA Accuracy"
     },
     {
       name: "GreenVest Capital",
@@ -84,25 +89,31 @@ const Showcase = () => {
             </p>
           </div>
 
-          {/* Placeholder Startup Cards */}
+          {/* Startup Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {placeholderStartups.map((startup, index) => (
               <Card key={index} className="card-hover bg-card border-border relative overflow-hidden">
-                {/* Status Overlay */}
-                <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-10">
-                  <div className="text-center space-y-2">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                      <Calendar className="h-6 w-6 text-primary" />
+                {/* Status Overlay - only for "Currently Being Updated" startups */}
+                {startup.status === "Currently Being Updated" && (
+                  <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-10">
+                    <div className="text-center space-y-2">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                        <Calendar className="h-6 w-6 text-primary" />
+                      </div>
+                      <p className="font-semibold">Currently Being Updated</p>
+                      <p className="text-sm text-muted-foreground">Coming Soon</p>
                     </div>
-                    <p className="font-semibold">Currently Being Updated</p>
-                    <p className="text-sm text-muted-foreground">Coming Soon</p>
                   </div>
-                </div>
+                )}
 
                 <CardHeader className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/40 rounded-lg flex items-center justify-center">
-                      <Building className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/40 rounded-lg flex items-center justify-center overflow-hidden">
+                      {startup.logo ? (
+                        <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain" />
+                      ) : (
+                        <Building className="h-6 w-6 text-primary" />
+                      )}
                     </div>
                     <Badge variant="outline" className="text-xs">
                       {startup.stage}
@@ -111,11 +122,21 @@ const Showcase = () => {
                   <div>
                     <CardTitle className="text-xl">{startup.name}</CardTitle>
                     <p className="text-sm text-primary font-medium">{startup.industry}</p>
+                    {startup.oneLiner && (
+                      <p className="text-xs text-muted-foreground mt-1 italic">"{startup.oneLiner}"</p>
+                    )}
                   </div>
                 </CardHeader>
 
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground text-sm">{startup.description}</p>
+                  
+                  {startup.location && startup.founded && (
+                    <div className="text-xs text-muted-foreground">
+                      📍 {startup.location} • Founded {startup.founded}
+                      {startup.funding && <span> • {startup.funding}</span>}
+                    </div>
+                  )}
                   
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2 text-sm">
@@ -131,7 +152,11 @@ const Showcase = () => {
                     </div>
                   </div>
 
-                  <Button variant="outline" className="w-full" disabled>
+                  <Button 
+                    variant="outline" 
+                    className="w-full" 
+                    disabled={startup.status === "Currently Being Updated"}
+                  >
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
