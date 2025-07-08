@@ -67,25 +67,25 @@ const Showcase = () => {
       {/* Startup Showcase Section */}
       <section id="showcase" className="section-padding">
         <div className="max-w-7xl mx-auto">
+          <div className="text-left space-y-4 mb-16">
+            <div className="text-xl font-semibold text-primary tracking-wider uppercase mb-4">
+              Venture Capital Division
+            </div>
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold scroll-fade-in">
+              Startup <span className="gradient-text">Showcase</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-4xl">
+              Discover innovative startups partnered with our Venture Capital Division. 
+              These companies represent the future of technology and innovation, seeking 
+              talented students for internships, co-founder opportunities, and full-time positions.
+            </p>
+          </div>
+
           {/* Black container with white margins */}
           <div className="bg-black text-white rounded-2xl px-6 sm:px-8 lg:px-10 py-16 sm:py-20 lg:py-24">
-            <div className="text-left space-y-6 mb-20">
-              <div className="text-2xl font-semibold text-white tracking-wider uppercase mb-6">
-                Venture Capital Division
-              </div>
-              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold scroll-fade-in">
-                Startup <span className="gradient-text">Showcase</span>
-              </h2>
-              <p className="text-2xl text-white/80 max-w-5xl leading-relaxed">
-                Discover innovative startups partnered with our Venture Capital Division. 
-                These companies represent the future of technology and innovation, seeking 
-                talented students for internships, co-founder opportunities, and full-time positions.
-              </p>
-            </div>
-
             {/* Startup Cards */}
             <div className="grid md:grid-cols-2 gap-12 mb-16">
-            {placeholderStartups.map((startup, index) => (
+              {placeholderStartups.map((startup, index) => (
               <Card key={index} className="card-hover bg-white/5 border-white/20 relative overflow-hidden backdrop-blur-sm">
                 {/* Status Overlay - only for "Currently Being Updated" startups */}
                 {startup.status === "Currently Being Updated" && (
@@ -182,7 +182,7 @@ const Showcase = () => {
               Submit Your Startup
               <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </Button>
-          </div>
+            </div>
           </div>
         </div>
       </section>
