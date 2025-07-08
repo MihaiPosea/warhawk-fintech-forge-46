@@ -30,7 +30,7 @@ const Showcase = () => {
       industry: "3D Technology / Foodservice SaaS",
       stage: "Pre-seed",
       description: "Cuiscene utilizes 3D reconstruction technology to effortlessly augment traditional menus with photorealistic, interactive visuals. By presenting dishes in a compelling and shareable format, Cuiscene helps foodservice operators raise customer engagement, increase transaction value, and stimulate organic brand awareness.",
-      openings: ["Sales team"],
+      openings: ["Sales Representative", "Marketer"],
       status: "Active",
       logo: "/lovable-uploads/a6290481-17fe-411e-ba1b-8dc3a4e5693a.png",
       location: "Waterloo, Canada",
