@@ -105,7 +105,7 @@ const Showcase = () => {
 
                 <CardHeader className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <div className="w-32 h-32 flex items-center justify-center overflow-hidden p-6">
+                    <div className="w-48 h-48 flex items-center justify-center overflow-hidden p-4">
                       {startup.logo ? (
                         <img 
                           src={startup.logo} 
