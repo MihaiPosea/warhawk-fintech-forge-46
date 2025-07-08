@@ -14,13 +14,14 @@ const Showcase = () => {
       industry: "Frontier AI research & deployment",
       stage: "Pre-seed",
       description: "Polarity is an autonomous multi-agent engine that maps your whole codebase, understands inter-file dependencies, and fixes technical debt automatically. Developers keep shipping features while Polarity quietly optimizes, documents, and safeguards code quality in every commit; no manual intervention needed.",
-      openings: ["Software Engineer", "AI/ML Engineer", "Product Manager"],
+      openings: ["Engineer", "Marketer"],
       status: "Active",
-      logo: "/lovable-uploads/73061e0a-c605-4d2e-8d6c-4fed45ec0659.png",
+      logo: "/lovable-uploads/polarity-white-logo.png",
       location: "Waterloo, ON",
       founded: "June 2025",
       funding: "$153k at $5M valuation",
-      oneLiner: "Autonomously perfects entire codebases, with SOTA Accuracy"
+      oneLiner: "Autonomously perfects entire codebases, with SOTA Accuracy",
+      website: "https://www.polarity.cc/"
     },
     {
       name: "GreenVest Capital",
@@ -64,17 +65,17 @@ const Showcase = () => {
   return (
     <>
       {/* Startup Showcase Section */}
-      <section id="showcase" className="section-padding">
+      <section id="showcase" className="section-padding bg-black text-white">
         
         <div className="max-w-7xl mx-auto">
-          <div className="text-left space-y-4 mb-16">
-            <div className="text-xl font-semibold text-primary tracking-wider uppercase mb-4">
+          <div className="text-left space-y-6 mb-20">
+            <div className="text-2xl font-semibold text-accent tracking-wider uppercase mb-6">
               Venture Capital Division
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold scroll-fade-in">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
               Startup <span className="gradient-text">Showcase</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl">
+            <p className="text-2xl text-white/80 max-w-5xl leading-relaxed">
               Discover innovative startups partnered with our Venture Capital Division. 
               These companies represent the future of technology and innovation, seeking 
               talented students for internships, co-founder opportunities, and full-time positions.
@@ -82,9 +83,9 @@ const Showcase = () => {
           </div>
 
           {/* Update Notice */}
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-12 text-left">
-            <h3 className="text-lg font-semibold text-primary mb-2">Updates in Progress</h3>
-            <p className="text-muted-foreground">
+          <div className="bg-accent/10 border border-accent/30 rounded-lg p-8 mb-16 text-left">
+            <h3 className="text-2xl font-semibold text-accent mb-3">Updates in Progress</h3>
+            <p className="text-white/70 text-lg">
               We're working on bringing you exciting startup opportunities. Check back soon for featured companies.
             </p>
           </div>
@@ -92,60 +93,60 @@ const Showcase = () => {
           {/* Startup Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {placeholderStartups.map((startup, index) => (
-              <Card key={index} className="card-hover bg-card border-border relative overflow-hidden">
+              <Card key={index} className="card-hover bg-white/5 border-white/20 relative overflow-hidden backdrop-blur-sm">
                 {/* Status Overlay - only for "Currently Being Updated" startups */}
                 {startup.status === "Currently Being Updated" && (
-                  <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-10">
+                  <div className="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-10">
                     <div className="text-center space-y-2">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                        <Calendar className="h-6 w-6 text-primary" />
+                      <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto">
+                        <Calendar className="h-6 w-6 text-accent" />
                       </div>
-                      <p className="font-semibold">Currently Being Updated</p>
-                      <p className="text-sm text-muted-foreground">Coming Soon</p>
+                      <p className="font-semibold text-white">Currently Being Updated</p>
+                      <p className="text-sm text-white/70">Coming Soon</p>
                     </div>
                   </div>
                 )}
 
-                <CardHeader className="space-y-4">
+                <CardHeader className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/40 rounded-lg flex items-center justify-center overflow-hidden">
+                    <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-white/10 rounded-lg flex items-center justify-center overflow-hidden p-3">
                       {startup.logo ? (
                         <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain" />
                       ) : (
-                        <Building className="h-6 w-6 text-primary" />
+                        <Building className="h-8 w-8 text-accent" />
                       )}
                     </div>
-                    <Badge variant="outline" className="text-xs">
+                    <Badge variant="outline" className="text-sm border-accent text-accent">
                       {startup.stage}
                     </Badge>
                   </div>
                   <div>
-                    <CardTitle className="text-xl">{startup.name}</CardTitle>
-                    <p className="text-sm text-primary font-medium">{startup.industry}</p>
+                    <CardTitle className="text-2xl text-white">{startup.name}</CardTitle>
+                    <p className="text-lg text-accent font-medium mt-2">{startup.industry}</p>
                     {startup.oneLiner && (
-                      <p className="text-xs text-muted-foreground mt-1 italic">"{startup.oneLiner}"</p>
+                      <p className="text-sm text-white/80 mt-2 italic">"{startup.oneLiner}"</p>
                     )}
                   </div>
                 </CardHeader>
 
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground text-sm">{startup.description}</p>
+                <CardContent className="space-y-6">
+                  <p className="text-white/90 text-base leading-relaxed">{startup.description}</p>
                   
                   {startup.location && startup.founded && (
-                    <div className="text-xs text-muted-foreground">
+                    <div className="text-sm text-white/70">
                       📍 {startup.location} • Founded {startup.founded}
                       {startup.funding && <span> • {startup.funding}</span>}
                     </div>
                   )}
                   
-                  <div className="space-y-2">
-                    <div className="flex items-center space-x-2 text-sm">
-                      <Users className="h-4 w-4 text-primary" />
-                      <span className="font-medium">Open Positions:</span>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-2 text-base">
+                      <Users className="h-5 w-5 text-accent" />
+                      <span className="font-medium text-white">Open Positions:</span>
                     </div>
-                    <div className="space-y-1">
+                    <div className="space-y-2">
                       {startup.openings.map((opening, idx) => (
-                        <div key={idx} className="text-sm text-muted-foreground pl-6">
+                        <div key={idx} className="text-base text-white/80 pl-7">
                           • {opening}
                         </div>
                       ))}
@@ -154,11 +155,12 @@ const Showcase = () => {
 
                   <Button 
                     variant="outline" 
-                    className="w-full" 
+                    className="w-full border-accent text-accent hover:bg-accent hover:text-black text-base py-3" 
                     disabled={startup.status === "Currently Being Updated"}
+                    onClick={() => startup.website && window.open(startup.website, '_blank')}
                   >
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    Visit Website
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </CardContent>
               </Card>
@@ -166,10 +168,10 @@ const Showcase = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="text-left space-y-6">
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold">Partner with Warhawk</h3>
-              <p className="text-muted-foreground max-w-2xl">
+          <div className="text-left space-y-8">
+            <div className="space-y-4">
+              <h3 className="text-3xl font-bold text-white">Partner with Warhawk</h3>
+              <p className="text-white/80 max-w-3xl text-lg leading-relaxed">
                 Are you a startup looking for talented students? Join our showcase and connect 
                 with the next generation of finance and technology leaders.
               </p>
@@ -177,10 +179,10 @@ const Showcase = () => {
             <Button 
               size="lg"
               onClick={() => navigate('/submit-startup')}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 group"
+              className="bg-accent hover:bg-accent/90 text-black px-10 py-4 group text-lg font-semibold"
             >
               Submit Your Startup
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>
