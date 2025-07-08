@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -7,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Showcase = () => {
   const navigate = useNavigate();
+  const [flippedCards, setFlippedCards] = useState<number[]>([]);
 
   const placeholderStartups = [
     {
@@ -62,6 +64,14 @@ const Showcase = () => {
     }
   ];
 
+  const toggleCard = (index: number) => {
+    setFlippedCards(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
   return (
     <>
       {/* Startup Showcase Section */}
@@ -89,92 +99,111 @@ const Showcase = () => {
             {/* Startup Cards */}
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               {placeholderStartups.map((startup, index) => (
-              <Card key={index} className="card-hover bg-white/5 border-white/20 relative overflow-hidden backdrop-blur-sm">
-                {/* Status Overlay - only for "Currently Being Updated" startups */}
-                {startup.status === "Currently Being Updated" && (
-                  <div className="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-10">
-                    <div className="text-center space-y-2">
-                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto">
-                        <Calendar className="h-6 w-6 text-white" />
-                      </div>
-                      <p className="font-semibold text-white">Currently Being Updated</p>
-                      <p className="text-sm text-white/70">Coming Soon</p>
-                    </div>
-                  </div>
-                )}
-
-                <CardHeader className="space-y-1">
-                  <div className="flex items-center justify-between">
-                    <div className="w-48 h-48 flex items-center justify-center overflow-hidden p-4">
-                      {startup.logo ? (
-                        <img 
-                          src={startup.logo} 
-                          alt={startup.name} 
-                          className="w-full h-full object-contain"
-                          onError={(e) => {
-                            console.error('Image failed to load:', startup.logo);
-                            e.currentTarget.style.display = 'none';
-                          }}
-                        />
-                      ) : (
-                        <Building className="h-8 w-8 text-white" />
-                      )}
-                    </div>
-                    <Badge variant="outline" className="text-sm border-white/50 text-white/80">
-                      {startup.stage}
-                    </Badge>
-                  </div>
-                  <div>
-                    {startup.oneLiner && (
-                      <p className="text-xl font-bold text-white mb-2">{startup.oneLiner}</p>
-                    )}
-                    <p className="text-sm text-white/70 font-medium">{startup.industry}</p>
-                  </div>
-                </CardHeader>
-
-                <CardContent className="space-y-6">
-                  <p className="text-white/90 text-base leading-relaxed">{startup.description}</p>
-                  
-                  {startup.location && startup.founded && (
-                    <div className="text-sm text-white/70">
-                      📍 {startup.location} • Founded {startup.founded}
-                    </div>
-                  )}
-
-                  {startup.funding && (
-                    <div className="bg-white/10 rounded-lg p-4 border border-white/20">
-                      <div className="text-xl font-bold text-white">{startup.funding}</div>
-                      <div className="text-sm text-white/70">Current Valuation & Funding</div>
-                    </div>
-                  )}
-                  
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-2 text-base">
-                      <Users className="h-5 w-5 text-white" />
-                      <span className="font-medium text-white">Open Positions:</span>
-                    </div>
-                    <div className="space-y-2">
-                      {startup.openings.map((opening, idx) => (
-                        <div key={idx} className="text-base text-white/80 pl-7">
-                          • {opening}
+                <div 
+                  key={index} 
+                  className="relative h-96 perspective-1000 cursor-pointer"
+                  onClick={() => toggleCard(index)}
+                >
+                  <div className={`relative w-full h-full transition-transform duration-700 preserve-3d ${
+                    flippedCards.includes(index) ? 'rotate-y-180' : ''
+                  }`}>
+                    
+                    {/* Front Side */}
+                    <Card className="absolute inset-0 w-full h-full bg-white/5 border-white/20 backface-hidden">
+                      {startup.status === "Currently Being Updated" && (
+                        <div className="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-10">
+                          <div className="text-center space-y-2">
+                            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto">
+                              <Calendar className="h-6 w-6 text-white" />
+                            </div>
+                            <p className="font-semibold text-white">Currently Being Updated</p>
+                            <p className="text-sm text-white/70">Coming Soon</p>
+                          </div>
                         </div>
-                      ))}
-                    </div>
-                  </div>
+                      )}
 
-                  <Button 
-                    variant="outline" 
-                    className="w-full bg-white border-white text-black hover:bg-gray-100 text-base py-3" 
-                    disabled={startup.status === "Currently Being Updated"}
-                    onClick={() => startup.website && window.open(startup.website, '_blank')}
-                  >
-                    Visit Website
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                      <CardContent className="flex flex-col items-center justify-center h-full p-8 text-center">
+                        <div className="w-48 h-48 flex items-center justify-center overflow-hidden p-4 mb-4">
+                          {startup.logo ? (
+                            <img 
+                              src={startup.logo} 
+                              alt={startup.name} 
+                              className="w-full h-full object-contain"
+                              onError={(e) => {
+                                console.error('Image failed to load:', startup.logo);
+                                e.currentTarget.style.display = 'none';
+                              }}
+                            />
+                          ) : (
+                            <Building className="h-16 w-16 text-white" />
+                          )}
+                        </div>
+                        
+                        {startup.oneLiner && (
+                          <p className="text-xl font-bold text-white mb-2">{startup.oneLiner}</p>
+                        )}
+                        <p className="text-sm text-white/70 font-medium">{startup.industry}</p>
+                        
+                        <Badge variant="outline" className="text-sm border-white/50 text-white/80 mt-4">
+                          {startup.stage}
+                        </Badge>
+                        
+                        <p className="text-white/60 text-sm mt-4">Click to learn more</p>
+                      </CardContent>
+                    </Card>
+
+                    {/* Back Side */}
+                    <Card className="absolute inset-0 w-full h-full bg-white/5 border-white/20 backface-hidden rotate-y-180">
+                      <CardContent className="p-6 h-full flex flex-col justify-between">
+                        <div className="space-y-4">
+                          <p className="text-white/90 text-base leading-relaxed">{startup.description}</p>
+                          
+                          {startup.location && startup.founded && (
+                            <div className="text-sm text-white/70">
+                              📍 {startup.location} • Founded {startup.founded}
+                            </div>
+                          )}
+
+                          {startup.funding && (
+                            <div className="bg-white/10 rounded-lg p-4 border border-white/20">
+                              <div className="text-xl font-bold text-white">{startup.funding}</div>
+                              <div className="text-sm text-white/70">Current Valuation & Funding</div>
+                            </div>
+                          )}
+                          
+                          <div className="space-y-3">
+                            <div className="flex items-center space-x-2 text-base">
+                              <Users className="h-5 w-5 text-white" />
+                              <span className="font-medium text-white">Open Positions:</span>
+                            </div>
+                            <div className="space-y-2">
+                              {startup.openings.map((opening, idx) => (
+                                <div key={idx} className="text-base text-white/80 pl-7">
+                                  • {opening}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        <Button 
+                          variant="outline" 
+                          className="w-full bg-white border-white text-black hover:bg-gray-100 text-base py-3 mt-4" 
+                          disabled={startup.status === "Currently Being Updated"}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            startup.website && window.open(startup.website, '_blank');
+                          }}
+                        >
+                          Visit Website
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              ))}
+            </div>
 
           {/* Call to Action */}
           <div className="text-left space-y-8">
