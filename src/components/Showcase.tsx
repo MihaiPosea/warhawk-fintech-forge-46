@@ -16,7 +16,7 @@ const Showcase = () => {
       description: "Polarity is an autonomous multi-agent engine that maps your whole codebase, understands inter-file dependencies, and fixes technical debt automatically. Developers keep shipping features while Polarity quietly optimizes, documents, and safeguards code quality in every commit; no manual intervention needed.",
       openings: ["Engineer", "Marketer"],
       status: "Active",
-      logo: "/lovable-uploads/eb0a67e2-31f2-482c-ae75-33f156816412.png",
+      logo: "/lovable-uploads/2a469753-3bda-4773-86c8-8d155909e364.png",
       location: "Waterloo, ON",
       founded: "June 2025",
       funding: "$153k at $5M valuation",
@@ -73,7 +73,7 @@ const Showcase = () => {
               <div className="text-xl font-semibold text-white tracking-wider uppercase mb-4">
                 Venture Capital Division
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold scroll-fade-in">
                 Startup <span className="gradient-text">Showcase</span>
               </h2>
               <p className="text-2xl text-white/80 max-w-5xl leading-relaxed">
@@ -114,8 +114,7 @@ const Showcase = () => {
                     </Badge>
                   </div>
                   <div>
-                    <CardTitle className="text-2xl text-white">{startup.name}</CardTitle>
-                    <p className="text-lg text-white/90 font-medium mt-2">{startup.industry}</p>
+                    <p className="text-lg text-white/90 font-medium">{startup.industry}</p>
                     {startup.oneLiner && (
                       <p className="text-sm text-white/80 mt-2 italic">"{startup.oneLiner}"</p>
                     )}
