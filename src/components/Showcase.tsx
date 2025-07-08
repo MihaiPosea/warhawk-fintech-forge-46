@@ -16,7 +16,7 @@ const Showcase = () => {
       description: "Polarity is an autonomous multi-agent engine that maps your whole codebase, understands inter-file dependencies, and fixes technical debt automatically. Developers keep shipping features while Polarity quietly optimizes, documents, and safeguards code quality in every commit; no manual intervention needed.",
       openings: ["Engineer", "Marketer"],
       status: "Active",
-      logo: "/lovable-uploads/polarity-white-logo.png",
+      logo: "/lovable-uploads/eb0a67e2-31f2-482c-ae75-33f156816412.png",
       location: "Waterloo, ON",
       founded: "June 2025",
       funding: "$153k at $5M valuation",
@@ -65,33 +65,26 @@ const Showcase = () => {
   return (
     <>
       {/* Startup Showcase Section */}
-      <section id="showcase" className="section-padding bg-black text-white">
-        
+      <section id="showcase" className="section-padding">
         <div className="max-w-7xl mx-auto">
-          <div className="text-left space-y-6 mb-20">
-            <div className="text-2xl font-semibold text-accent tracking-wider uppercase mb-6">
-              Venture Capital Division
+          {/* Black container with white margins */}
+          <div className="bg-black text-white rounded-2xl px-8 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-24">
+            <div className="text-left space-y-6 mb-20">
+              <div className="text-2xl font-semibold text-accent tracking-wider uppercase mb-6">
+                Venture Capital Division
+              </div>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
+                Startup <span className="gradient-text">Showcase</span>
+              </h2>
+              <p className="text-2xl text-white/80 max-w-5xl leading-relaxed">
+                Discover innovative startups partnered with our Venture Capital Division. 
+                These companies represent the future of technology and innovation, seeking 
+                talented students for internships, co-founder opportunities, and full-time positions.
+              </p>
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
-              Startup <span className="gradient-text">Showcase</span>
-            </h2>
-            <p className="text-2xl text-white/80 max-w-5xl leading-relaxed">
-              Discover innovative startups partnered with our Venture Capital Division. 
-              These companies represent the future of technology and innovation, seeking 
-              talented students for internships, co-founder opportunities, and full-time positions.
-            </p>
-          </div>
 
-          {/* Update Notice */}
-          <div className="bg-accent/10 border border-accent/30 rounded-lg p-8 mb-16 text-left">
-            <h3 className="text-2xl font-semibold text-accent mb-3">Updates in Progress</h3>
-            <p className="text-white/70 text-lg">
-              We're working on bringing you exciting startup opportunities. Check back soon for featured companies.
-            </p>
-          </div>
-
-          {/* Startup Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Startup Cards */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {placeholderStartups.map((startup, index) => (
               <Card key={index} className="card-hover bg-white/5 border-white/20 relative overflow-hidden backdrop-blur-sm">
                 {/* Status Overlay - only for "Currently Being Updated" startups */}
@@ -109,9 +102,9 @@ const Showcase = () => {
 
                 <CardHeader className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-white/10 rounded-lg flex items-center justify-center overflow-hidden p-3">
+                    <div className="w-24 h-24 bg-white/10 rounded-xl flex items-center justify-center overflow-hidden p-4 backdrop-blur-sm border border-white/20">
                       {startup.logo ? (
-                        <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain" />
+                        <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain filter brightness-0 invert" />
                       ) : (
                         <Building className="h-8 w-8 text-accent" />
                       )}
@@ -184,6 +177,7 @@ const Showcase = () => {
               Submit Your Startup
               <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </Button>
+          </div>
           </div>
         </div>
       </section>
