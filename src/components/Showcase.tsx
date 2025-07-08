@@ -101,7 +101,7 @@ const Showcase = () => {
               {placeholderStartups.map((startup, index) => (
                 <div 
                   key={index} 
-                  className="relative perspective-1000 cursor-pointer"
+                  className="relative h-96 perspective-1000 cursor-pointer"
                   onClick={() => toggleCard(index)}
                 >
                   <div className={`relative w-full h-full transition-transform duration-700 preserve-3d ${
@@ -123,7 +123,7 @@ const Showcase = () => {
                       )}
 
                       <CardContent className="flex flex-col items-center justify-center h-full p-8 text-center">
-                        <div className="w-64 h-64 flex items-center justify-center overflow-hidden p-4 mb-6">
+                        <div className="w-48 h-48 flex items-center justify-center overflow-hidden p-4 mb-4">
                           {startup.logo ? (
                             <img 
                               src={startup.logo} 
@@ -135,63 +135,60 @@ const Showcase = () => {
                               }}
                             />
                           ) : (
-                            <Building className="h-32 w-32 text-white" />
+                            <Building className="h-16 w-16 text-white" />
                           )}
                         </div>
                         
-                        <p className="text-white/60 text-lg">Click to learn more</p>
+                        {startup.oneLiner && (
+                          <p className="text-xl font-bold text-white mb-2">{startup.oneLiner}</p>
+                        )}
+                        <p className="text-sm text-white/70 font-medium">{startup.industry}</p>
+                        
+                        <Badge variant="outline" className="text-sm border-white/50 text-white/80 mt-4">
+                          {startup.stage}
+                        </Badge>
+                        
+                        <p className="text-white/60 text-sm mt-4">Click to learn more</p>
                       </CardContent>
                     </Card>
 
                     {/* Back Side */}
                     <Card className="absolute inset-0 w-full h-full bg-white/5 border-white/20 backface-hidden rotate-y-180">
-                      <CardHeader className="space-y-1">
-                        <div className="flex items-center justify-between">
-                          <div>
-                            {startup.oneLiner && (
-                              <p className="text-xl font-bold text-white mb-2">{startup.oneLiner}</p>
-                            )}
-                            <p className="text-sm text-white/70 font-medium">{startup.industry}</p>
-                          </div>
-                          <Badge variant="outline" className="text-sm border-white/50 text-white/80">
-                            {startup.stage}
-                          </Badge>
-                        </div>
-                      </CardHeader>
+                      <CardContent className="p-6 h-full flex flex-col justify-between">
+                        <div className="space-y-4">
+                          <p className="text-white/90 text-base leading-relaxed">{startup.description}</p>
+                          
+                          {startup.location && startup.founded && (
+                            <div className="text-sm text-white/70">
+                              📍 {startup.location} • Founded {startup.founded}
+                            </div>
+                          )}
 
-                      <CardContent className="space-y-4">
-                        <p className="text-white/90 text-base leading-relaxed">{startup.description}</p>
-                        
-                        {startup.location && startup.founded && (
-                          <div className="text-sm text-white/70">
-                            📍 {startup.location} • Founded {startup.founded}
-                          </div>
-                        )}
-
-                        {startup.funding && (
-                          <div className="bg-white/10 rounded-lg p-4 border border-white/20">
-                            <div className="text-xl font-bold text-white">{startup.funding}</div>
-                            <div className="text-sm text-white/70">Current Valuation & Funding</div>
-                          </div>
-                        )}
-                        
-                        <div className="space-y-3">
-                          <div className="flex items-center space-x-2 text-base">
-                            <Users className="h-5 w-5 text-white" />
-                            <span className="font-medium text-white">Open Positions:</span>
-                          </div>
-                          <div className="space-y-2">
-                            {startup.openings.map((opening, idx) => (
-                              <div key={idx} className="text-base text-white/80 pl-7">
-                                • {opening}
-                              </div>
-                            ))}
+                          {startup.funding && (
+                            <div className="bg-white/10 rounded-lg p-4 border border-white/20">
+                              <div className="text-xl font-bold text-white">{startup.funding}</div>
+                              <div className="text-sm text-white/70">Current Valuation & Funding</div>
+                            </div>
+                          )}
+                          
+                          <div className="space-y-3">
+                            <div className="flex items-center space-x-2 text-base">
+                              <Users className="h-5 w-5 text-white" />
+                              <span className="font-medium text-white">Open Positions:</span>
+                            </div>
+                            <div className="space-y-2">
+                              {startup.openings.map((opening, idx) => (
+                                <div key={idx} className="text-base text-white/80 pl-7">
+                                  • {opening}
+                                </div>
+                              ))}
+                            </div>
                           </div>
                         </div>
 
                         <Button 
                           variant="outline" 
-                          className="w-full bg-white border-white text-black hover:bg-gray-100 text-base py-3" 
+                          className="w-full bg-white border-white text-black hover:bg-gray-100 text-base py-3 mt-4" 
                           disabled={startup.status === "Currently Being Updated"}
                           onClick={(e) => {
                             e.stopPropagation();
