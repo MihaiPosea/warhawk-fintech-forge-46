@@ -103,7 +103,7 @@ const Showcase = () => {
                   </div>
                 )}
 
-                <CardHeader className="space-y-3">
+                <CardHeader className="space-y-1">
                   <div className="flex items-center justify-between">
                     <div className="w-48 h-48 flex items-center justify-center overflow-hidden p-4">
                       {startup.logo ? (
