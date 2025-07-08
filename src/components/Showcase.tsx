@@ -70,7 +70,7 @@ const Showcase = () => {
           {/* Black container with white margins */}
           <div className="bg-black text-white rounded-2xl px-6 sm:px-8 lg:px-10 py-16 sm:py-20 lg:py-24">
             <div className="text-left space-y-6 mb-20">
-              <div className="text-xl font-semibold text-white tracking-wider uppercase mb-4">
+              <div className="text-2xl font-semibold text-white tracking-wider uppercase mb-6">
                 Venture Capital Division
               </div>
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold scroll-fade-in">
@@ -102,7 +102,7 @@ const Showcase = () => {
 
                 <CardHeader className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <div className="w-32 h-32 bg-white/10 rounded-xl flex items-center justify-center overflow-hidden p-6 backdrop-blur-sm border border-white/20">
+                    <div className="w-32 h-32 bg-white rounded-xl flex items-center justify-center overflow-hidden p-6">
                       {startup.logo ? (
                         <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain" />
                       ) : (
@@ -127,7 +127,13 @@ const Showcase = () => {
                   {startup.location && startup.founded && (
                     <div className="text-sm text-white/70">
                       📍 {startup.location} • Founded {startup.founded}
-                      {startup.funding && <span> • {startup.funding}</span>}
+                    </div>
+                  )}
+
+                  {startup.funding && (
+                    <div className="bg-white/10 rounded-lg p-4 border border-white/20">
+                      <div className="text-xl font-bold text-white">{startup.funding}</div>
+                      <div className="text-sm text-white/70">Current Valuation & Funding</div>
                     </div>
                   )}
                   
@@ -185,8 +191,9 @@ const Showcase = () => {
       <section className="section-padding bg-secondary/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-left space-y-4 mb-12">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold scroll-fade-in">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold scroll-fade-in relative inline-block">
               <span className="text-foreground">Coming</span> <span className="gradient-text">Soon</span>
+              <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-accent to-yellow-600"></div>
             </h3>
             <p className="text-muted-foreground">
               Expanding our expertise across additional finance sectors
