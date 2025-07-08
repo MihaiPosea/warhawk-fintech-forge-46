@@ -101,7 +101,7 @@ const Showcase = () => {
               {placeholderStartups.map((startup, index) => (
                 <div 
                   key={index} 
-                  className="relative h-[420px] perspective-1000 cursor-pointer"
+                  className="relative h-[550px] perspective-1000 cursor-pointer"
                   onClick={() => toggleCard(index)}
                 >
                   <div className={`relative w-full h-full transition-transform duration-700 preserve-3d ${
