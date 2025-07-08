@@ -16,7 +16,7 @@ const Showcase = () => {
       description: "Polarity is an autonomous multi-agent engine that maps your whole codebase, understands inter-file dependencies, and fixes technical debt automatically. Developers keep shipping features while Polarity quietly optimizes, documents, and safeguards code quality in every commit; no manual intervention needed.",
       openings: ["Engineer", "Marketer"],
       status: "Active",
-      logo: "/lovable-uploads/2a469753-3bda-4773-86c8-8d155909e364.png",
+      logo: "/lovable-uploads/3ed3e4ec-f779-470f-81e7-86b95b2e1594.png",
       location: "Waterloo, ON",
       founded: "June 2025",
       funding: "$153k at $5M valuation",
@@ -117,10 +117,10 @@ const Showcase = () => {
                     </Badge>
                   </div>
                   <div>
-                    <p className="text-lg text-white/90 font-medium">{startup.industry}</p>
                     {startup.oneLiner && (
-                      <p className="text-sm text-white/80 mt-2 italic">"{startup.oneLiner}"</p>
+                      <p className="text-xl font-bold text-white mb-2">"{startup.oneLiner}"</p>
                     )}
+                    <p className="text-sm text-white/70 font-medium">{startup.industry}</p>
                   </div>
                 </CardHeader>
 
