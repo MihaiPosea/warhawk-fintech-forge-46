@@ -32,6 +32,7 @@ const Showcase = () => {
       description: "Cuiscene utilizes 3D reconstruction technology to effortlessly augment traditional menus with photorealistic, interactive visuals. By presenting dishes in a compelling and shareable format, Cuiscene helps foodservice operators raise customer engagement, increase transaction value, and stimulate organic brand awareness.",
       openings: ["Full-stack Developer", "3D Artist", "Sales Intern"],
       status: "Active",
+      logo: "/lovable-uploads/a6290481-17fe-411e-ba1b-8dc3a4e5693a.png",
       location: "Waterloo, Canada",
       founded: "2025",
       oneLiner: "Interactive 3D platform for next-gen foodservice menus",
