@@ -68,7 +68,7 @@ const Showcase = () => {
       <section id="showcase" className="section-padding">
         <div className="max-w-7xl mx-auto">
           <div className="text-left space-y-4 mb-16">
-            <div className="text-xl font-semibold text-primary tracking-wider uppercase mb-4">
+            <div className="text-2xl font-bold text-primary tracking-wider uppercase mb-4">
               Venture Capital Division
             </div>
           </div>

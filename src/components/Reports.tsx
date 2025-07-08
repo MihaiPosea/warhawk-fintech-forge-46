@@ -13,7 +13,7 @@ const Reports = () => {
             <span className="text-foreground">Explore</span> <span className="gradient-text">our work.</span>
           </h2>
           <div className="w-full h-px bg-border"></div>
-          <div className="text-xl font-semibold text-primary tracking-wider uppercase mb-4">
+          <div className="text-2xl font-bold text-primary tracking-wider uppercase mb-4">
             Investment Banking Division
           </div>
         </div>
