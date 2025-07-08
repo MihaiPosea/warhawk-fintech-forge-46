@@ -26,6 +26,18 @@ const Showcase = () => {
       website: "https://www.polarity.cc/"
     },
     {
+      name: "Cuiscene",
+      industry: "3D Technology / Foodservice SaaS",
+      stage: "Pre-seed",
+      description: "Cuiscene utilizes 3D reconstruction technology to effortlessly augment traditional menus with photorealistic, interactive visuals. By presenting dishes in a compelling and shareable format, Cuiscene helps foodservice operators raise customer engagement, increase transaction value, and stimulate organic brand awareness.",
+      openings: ["Full-stack Developer", "3D Artist", "Sales Intern"],
+      status: "Active",
+      location: "Waterloo, Canada",
+      founded: "2025",
+      oneLiner: "Interactive 3D platform for next-gen foodservice menus",
+      website: "https://cuiscene.ca"
+    },
+    {
       name: "GreenVest Capital",
       industry: "Sustainable Finance", 
       stage: "Seed",
