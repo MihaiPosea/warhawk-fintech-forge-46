@@ -68,7 +68,7 @@ const Showcase = () => {
       <section id="showcase" className="section-padding">
         <div className="max-w-7xl mx-auto">
           {/* Black container with white margins */}
-          <div className="bg-black text-white rounded-2xl px-8 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-24">
+          <div className="bg-black text-white rounded-2xl px-6 sm:px-8 lg:px-10 py-16 sm:py-20 lg:py-24">
             <div className="text-left space-y-6 mb-20">
               <div className="text-2xl font-semibold text-white tracking-wider uppercase mb-6">
                 Venture Capital Division
@@ -148,7 +148,7 @@ const Showcase = () => {
 
                   <Button 
                     variant="outline" 
-                    className="w-full border-white/50 text-white hover:bg-white hover:text-black text-base py-3" 
+                    className="w-full bg-black border-black text-white hover:bg-gray-900 text-base py-3" 
                     disabled={startup.status === "Currently Being Updated"}
                     onClick={() => startup.website && window.open(startup.website, '_blank')}
                   >
@@ -172,7 +172,7 @@ const Showcase = () => {
               <Button 
                 size="lg"
                 onClick={() => navigate('/submit-startup')}
-                className="bg-white hover:bg-white/90 text-black px-10 py-4 group text-lg font-semibold"
+                className="bg-accent hover:bg-accent/90 text-black px-10 py-4 group text-lg font-semibold"
               >
               Submit Your Startup
               <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
@@ -186,7 +186,9 @@ const Showcase = () => {
       <section className="section-padding bg-secondary/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-left space-y-4 mb-12">
-            <h3 className="text-2xl font-bold scroll-fade-in">Coming Soon</h3>
+            <h3 className="text-2xl font-bold scroll-fade-in">
+              <span className="text-foreground">Coming</span> <span className="gradient-text">Soon</span>
+            </h3>
             <p className="text-muted-foreground">
               Expanding our expertise across additional finance sectors
             </p>
