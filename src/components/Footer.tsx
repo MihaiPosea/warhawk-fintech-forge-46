@@ -1,5 +1,5 @@
 
-import { Building } from 'lucide-react';
+import { Building, Instagram, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -69,6 +69,36 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+            
+            {/* Contact Information */}
+            <div className="mt-6 space-y-3">
+              <h4 className="font-medium">Contact us:</h4>
+              <a 
+                href="mailto:warhawkcapital@gmail.com"
+                className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-light"
+              >
+                <Mail className="h-4 w-4" />
+                <span>warhawkcapital@gmail.com</span>
+              </a>
+              
+              {/* Social Media */}
+              <div className="flex space-x-3 pt-2">
+                <a 
+                  href="#" 
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a 
+                  href="#" 
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
           </div>
 
         </div>
