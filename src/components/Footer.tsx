@@ -85,14 +85,18 @@ const Footer = () => {
             {/* Social Media */}
             <div className="flex space-x-3 pt-2">
               <a 
-                href="#" 
+                href="https://www.instagram.com/warhawkcapital" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/company/warhawk-capital" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="LinkedIn"
               >
