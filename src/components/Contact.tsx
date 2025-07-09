@@ -33,6 +33,15 @@ const Contact = () => {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold scroll-fade-in">
             The future won't wait. <span className="gradient-text">Step into the Warhawk Way.</span>
           </h2>
+          <div className="space-y-4">
+            <p className="text-muted-foreground">Contact us:</p>
+            <a 
+              href="mailto:warhawkcapital@gmail.com" 
+              className="text-accent hover:text-accent/80 transition-colors font-medium"
+            >
+              warhawkcapital@gmail.com
+            </a>
+          </div>
         </div>
       </div>
     </section>

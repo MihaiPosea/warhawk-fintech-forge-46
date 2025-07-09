@@ -71,11 +71,11 @@ const Structure = () => {
         <div className="max-w-6xl mx-auto">
           {/* Executive Level */}
           <div className="text-center mb-12">
-            <Card className="inline-block bg-accent/10 border-accent/20">
-              <CardContent className="p-6">
-                <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-accent-foreground">WC</span>
-                </div>
+          <Card className="inline-block bg-accent/10 border-accent/20">
+            <CardContent className="p-6">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 p-2">
+                <img src="/src/assets/wc-logo.png" alt="Warhawk Capital Logo" className="w-full h-full object-contain" />
+              </div>
                 <h3 className="text-xl font-bold">Warhawk Student Capital</h3>
                 <p className="text-muted-foreground">Executive Leadership</p>
               </CardContent>
