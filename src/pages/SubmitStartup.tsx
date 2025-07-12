@@ -217,7 +217,7 @@ const SubmitStartup = () => {
               <Button 
                 type="submit" 
                 size="lg"
-                className="px-12 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold"
+                className="px-12 py-3 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
               >
                 Submit Application
               </Button>
