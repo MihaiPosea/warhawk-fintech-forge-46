@@ -42,7 +42,7 @@ const SubmitStartup = () => {
       {/* Header with Background */}
       <div 
         className="relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('/lovable-uploads/3cde49d6-6cd5-433c-9897-d1b783f1ab39.png')` }}
+        style={{ backgroundImage: `url('/lovable-uploads/b746c0d0-c5e4-4e21-abbd-18e27acc2a05.png')` }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -57,7 +57,7 @@ const SubmitStartup = () => {
           
           <div className="text-center space-y-6">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto">
-              <img src="/src/assets/wc-logo.png" alt="WC Logo" className="h-10 w-10" />
+              <img src="/lovable-uploads/9c45083c-67d5-499a-9772-23568458ba76.png" alt="WC Logo" className="h-10 w-10" />
             </div>
             <div>
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Submit Your Startup</h1>
