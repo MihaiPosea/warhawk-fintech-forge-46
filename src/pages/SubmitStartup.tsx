@@ -52,8 +52,8 @@ const SubmitStartup = () => {
           </Button>
           
           <div className="text-center space-y-6">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto">
-              <img src="/lovable-uploads/9c45083c-67d5-499a-9772-23568458ba76.png" alt="WC Logo" className="h-10 w-10" />
+            <div className="mx-auto mb-6">
+              <img src="/lovable-uploads/fb397207-0b5c-4567-a7fd-a5cb5b062a98.png" alt="WC Logo" className="h-16 w-16 mx-auto" />
             </div>
             <div>
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Submit <span className="gradient-text">Your Startup</span></h1>
