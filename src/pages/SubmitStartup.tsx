@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Upload, Globe, Calendar, Target, Users, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Upload, Globe, Calendar, Target, Users, AlertCircle, Rocket } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -53,7 +53,9 @@ const SubmitStartup = () => {
           
           <div className="text-center space-y-6">
             <div className="mx-auto mb-6">
-              <img src="/lovable-uploads/e57c2a46-7bfb-4798-ba04-c92fc3bba8ab.png" alt="WC Logo" className="h-32 w-32 mx-auto" />
+              <div className="rocket-animation">
+                <Rocket className="h-20 w-20 text-yellow-400" />
+              </div>
             </div>
             <div>
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Submit <span className="gradient-text">Your Startup</span></h1>
