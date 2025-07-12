@@ -39,12 +39,8 @@ const SubmitStartup = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header with Background */}
-      <div 
-        className="relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('/lovable-uploads/c7f55376-d495-4a7c-a549-8213d8584f21.png')` }}
-      >
-        <div className="absolute inset-0 bg-black/50"></div>
+      {/* Header with Black Background */}
+      <div className="relative bg-black">
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <Button
             variant="ghost"
