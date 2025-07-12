@@ -42,7 +42,7 @@ const SubmitStartup = () => {
       {/* Header with Background */}
       <div 
         className="relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('/lovable-uploads/b746c0d0-c5e4-4e21-abbd-18e27acc2a05.png')` }}
+        style={{ backgroundImage: `url('/lovable-uploads/c7f55376-d495-4a7c-a549-8213d8584f21.png')` }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
