@@ -56,7 +56,7 @@ const SubmitStartup = () => {
               <img src="/lovable-uploads/9c45083c-67d5-499a-9772-23568458ba76.png" alt="WC Logo" className="h-10 w-10" />
             </div>
             <div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Submit Your Startup</h1>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Submit <span className="gradient-text">Your Startup</span></h1>
               <p className="text-xl text-white/90 max-w-3xl mx-auto">
                 Join our startup showcase and take part in building a venture ecosystem that empowers early-stage startups with the insight, support, and exposure they need to grow.
               </p>
