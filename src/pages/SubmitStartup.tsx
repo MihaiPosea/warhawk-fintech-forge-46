@@ -53,7 +53,7 @@ const SubmitStartup = () => {
           
           <div className="text-center space-y-6">
             <div className="mx-auto mb-6">
-              <img src="/lovable-uploads/e57c2a46-7bfb-4798-ba04-c92fc3bba8ab.png" alt="WC Logo" className="h-16 w-16 mx-auto" />
+              <img src="/lovable-uploads/e57c2a46-7bfb-4798-ba04-c92fc3bba8ab.png" alt="WC Logo" className="h-32 w-32 mx-auto" />
             </div>
             <div>
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Submit <span className="gradient-text">Your Startup</span></h1>
