@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Rocket, Upload, Globe, Calendar, MapPin, Target, Users, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Upload, Globe, Calendar, Target, Users, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -14,7 +14,7 @@ const SubmitStartup = () => {
     logo: null as File | null,
     industry: '',
     foundingYear: '',
-    location: '',
+    
     oneLiner: '',
     description: '',
     website: '',
@@ -39,26 +39,30 @@ const SubmitStartup = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="border-b border-gray-200 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Header with Background */}
+      <div 
+        className="relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('/lovable-uploads/3cde49d6-6cd5-433c-9897-d1b783f1ab39.png')` }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <Button
             variant="ghost"
             onClick={() => navigate('/')}
-            className="mb-6 text-gray-600 hover:text-gray-900"
+            className="mb-6 text-white hover:text-gray-200 hover:bg-white/10"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </Button>
           
           <div className="text-center space-y-6">
-            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto">
-              <Rocket className="h-8 w-8 text-yellow-600" />
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto">
+              <img src="/src/assets/wc-logo.png" alt="WC Logo" className="h-10 w-10" />
             </div>
             <div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Submit Your Startup</h1>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Join our startup showcase and connect with top finance talent from Laurier and Waterloo
+              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Submit Your Startup</h1>
+              <p className="text-xl text-white/90 max-w-3xl mx-auto">
+                Join our startup showcase and take part in building a venture ecosystem that empowers early-stage startups with the insight, support, and exposure they need to grow.
               </p>
             </div>
           </div>
@@ -109,33 +113,17 @@ const SubmitStartup = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700">Founding Year *</label>
-                    <div className="relative">
-                      <Calendar className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                      <Input
-                        placeholder="2024"
-                        className="pl-10 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                        value={formData.foundingYear}
-                        onChange={(e) => handleInputChange('foundingYear', e.target.value)}
-                        required
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700">Location *</label>
-                    <div className="relative">
-                      <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                      <Input
-                        placeholder="City, Country"
-                        className="pl-10 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                        value={formData.location}
-                        onChange={(e) => handleInputChange('location', e.target.value)}
-                        required
-                      />
-                    </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">Founding Year *</label>
+                  <div className="relative">
+                    <Calendar className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <Input
+                      placeholder="2024"
+                      className="pl-10 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                      value={formData.foundingYear}
+                      onChange={(e) => handleInputChange('foundingYear', e.target.value)}
+                      required
+                    />
                   </div>
                 </div>
 
