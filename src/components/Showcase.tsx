@@ -38,22 +38,6 @@ const Showcase = () => {
       oneLiner: "Interactive 3D platform for next-gen foodservice menus",
       website: "https://cuiscene.ca"
     },
-    {
-      name: "GreenVest Capital",
-      industry: "Sustainable Finance", 
-      stage: "Seed",
-      description: "ESG-focused investment platform connecting retail investors with green opportunities",
-      openings: ["Co-founder (CTO)", "Full-stack Developer", "Marketing Intern"],
-      status: "Currently Being Updated"
-    },
-    {
-      name: "QuantEdge Analytics",
-      industry: "Trading Tech",
-      stage: "Pre-seed",
-      description: "Machine learning algorithms for high-frequency trading and risk management",
-      openings: ["Quantitative Analyst", "ML Engineer Intern", "Research Associate"],
-      status: "Currently Being Updated"
-    }
   ];
 
   const futureDivisions = [
@@ -71,8 +55,8 @@ const Showcase = () => {
     },
     {
       icon: PieChart,
-      title: "More to Come",
-      description: "Additional specialized divisions will be announced as we continue to expand our comprehensive finance education platform.",
+      title: "Our Comprehensive Finance Team",
+      description: "Additional specialized divisions will be announced as we continue to expand our comprehensive finance team.",
       color: "bg-muted/50 text-muted-foreground border-muted"
     }
   ];

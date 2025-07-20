@@ -71,18 +71,18 @@ const About = () => {
 
         
         {/* Stats as tiles */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-          <Card className="text-center p-8 bg-card border-border">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-2 font-inter">2</div>
-            <div className="text-lg sm:text-xl text-muted-foreground uppercase tracking-wide font-medium font-inter">Universities</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+          <Card className="text-center p-12 bg-card border-border">
+            <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-4 font-inter">2</div>
+            <div className="text-xl sm:text-2xl text-muted-foreground uppercase tracking-wide font-medium font-inter">Universities</div>
           </Card>
-          <Card className="text-center p-8 bg-card border-border">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-2 font-inter">1</div>
-            <div className="text-lg sm:text-xl text-muted-foreground uppercase tracking-wide font-medium font-inter">Mission</div>
+          <Card className="text-center p-12 bg-card border-border">
+            <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-4 font-inter">1</div>
+            <div className="text-xl sm:text-2xl text-muted-foreground uppercase tracking-wide font-medium font-inter">Mission</div>
           </Card>
-          <Card className="text-center p-8 bg-card border-border">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-2 font-inter">100%</div>
-            <div className="text-lg sm:text-xl text-muted-foreground uppercase tracking-wide font-medium font-inter">Hands-On</div>
+          <Card className="text-center p-12 bg-card border-border">
+            <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-4 font-inter">100%</div>
+            <div className="text-xl sm:text-2xl text-muted-foreground uppercase tracking-wide font-medium font-inter">Hands-On</div>
           </Card>
         </div>
 
