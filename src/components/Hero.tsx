@@ -47,7 +47,7 @@ const Hero = () => {
         </div>
 
         {/* CTA Buttons - Moved higher to fill gap */}
-        <div className="absolute bottom-60 left-1/2 transform -translate-x-1/2 w-full">
+        <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 w-full">
           <div className="flex flex-col sm:flex-row gap-2 justify-center items-center">
             <Button size="lg" onClick={() => scrollToSection('divisions')} className="bg-foreground hover:bg-foreground/90 text-background px-7 py-3 text-base font-light group rounded-full font-inter">
               Explore Divisions
