@@ -283,13 +283,6 @@ const Divisions = () => {
                   </div>
                 </div>
 
-                <Button 
-                  onClick={() => handleJoinDivision(division.title)}
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground group"
-                >
-                  Join Division
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
               </CardContent>
             </Card>
           ))}
