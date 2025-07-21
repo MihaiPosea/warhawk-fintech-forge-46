@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Upload, Globe, Calendar, Target, Users, AlertCircle, Rocket } from 'lucide-react';
+import { ArrowLeft, Globe, Calendar, Target, Users, AlertCircle, Rocket } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -11,7 +11,7 @@ const SubmitStartup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     startupName: '',
-    logo: null as File | null,
+    logo: '',
     industry: '',
     foundingYear: '',
     
@@ -38,8 +38,10 @@ const SubmitStartup = () => {
               { name: "One-liner Pitch", value: formData.oneLiner },
               { name: "Description", value: formData.description },
               { name: "Website", value: formData.website || "Not provided", inline: true },
+              { name: "Logo URL", value: formData.logo || "Not provided", inline: true },
               { name: "What they need", value: formData.needs || "Not specified" }
             ],
+            ...(formData.logo && { thumbnail: { url: formData.logo } }),
             timestamp: new Date().toISOString(),
             footer: { text: "WealthCre8 Startup Submission" }
           }
@@ -66,13 +68,8 @@ const SubmitStartup = () => {
     }
   };
 
-  const handleInputChange = (field: string, value: string | File | null) => {
+  const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-    handleInputChange('logo', file);
   };
 
   return (
@@ -164,27 +161,14 @@ const SubmitStartup = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Logo</label>
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-gray-400 transition-colors">
-                    <Upload className="h-8 w-8 text-gray-400 mx-auto mb-2" />
-                    <p className="text-sm text-gray-600 mb-2">Upload your startup logo</p>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleFileChange}
-                      className="hidden"
-                      id="logo-upload"
-                    />
-                    <label
-                      htmlFor="logo-upload"
-                      className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 cursor-pointer"
-                    >
-                      Choose File
-                    </label>
-                    {formData.logo && (
-                      <p className="text-sm text-green-600 mt-2">✓ {formData.logo.name}</p>
-                    )}
-                  </div>
+                  <label className="text-sm font-medium text-gray-700">Link to Logo</label>
+                  <Input
+                    placeholder="https://yourstartup.com/logo.png"
+                    className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                    value={formData.logo}
+                    onChange={(e) => handleInputChange('logo', e.target.value)}
+                  />
+                  <p className="text-xs text-gray-500">Direct link to your startup logo image</p>
                 </div>
               </CardContent>
             </Card>
