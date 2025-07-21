@@ -21,11 +21,49 @@ const SubmitStartup = () => {
     needs: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Startup submitted:', formData);
-    alert('Startup submission received! Our Venture Capital team will review and get back to you soon.');
-    navigate('/');
+    
+    try {
+      // Format data for Discord webhook
+      const discordData = {
+        embeds: [
+          {
+            title: "🚀 New Startup Submission",
+            color: 0x5865F2,
+            fields: [
+              { name: "Startup Name", value: formData.startupName, inline: true },
+              { name: "Industry", value: formData.industry, inline: true },
+              { name: "Founded", value: formData.foundingYear, inline: true },
+              { name: "One-liner Pitch", value: formData.oneLiner },
+              { name: "Description", value: formData.description },
+              { name: "Website", value: formData.website || "Not provided", inline: true },
+              { name: "What they need", value: formData.needs || "Not specified" }
+            ],
+            timestamp: new Date().toISOString(),
+            footer: { text: "WealthCre8 Startup Submission" }
+          }
+        ]
+      };
+
+      const response = await fetch('https://discord.com/api/webhooks/1396675227198423162/DgIadsDlDDy8eFcnTQnPLjpLU6jNkvw_ZieUx3z3qot6pl2TNKK1lOm6Hn1xN7DKAySA', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(discordData),
+      });
+
+      if (response.ok) {
+        alert('Startup submission received! Our Venture Capital team will review and get back to you soon.');
+        navigate('/');
+      } else {
+        throw new Error('Failed to submit');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting your application. Please try again.');
+    }
   };
 
   const handleInputChange = (field: string, value: string | File | null) => {
