@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Globe, Calendar, Target, Users, AlertCircle, Rocket } from 'lucide-react';
+import { ArrowLeft, Globe, Calendar, Target, Users, AlertCircle, Rocket, Mail, Phone, Linkedin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -18,7 +18,11 @@ const SubmitStartup = () => {
     oneLiner: '',
     description: '',
     website: '',
-    needs: ''
+    needs: '',
+    
+    email: '',
+    phone: '',
+    linkedin: ''
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -39,7 +43,10 @@ const SubmitStartup = () => {
               { name: "Description", value: formData.description },
               { name: "Website", value: formData.website || "Not provided", inline: true },
               { name: "Logo URL", value: formData.logo || "Not provided", inline: true },
-              { name: "What they need", value: formData.needs || "Not specified" }
+              { name: "What they need", value: formData.needs || "Not specified" },
+              { name: "📧 Email", value: formData.email || "Not provided", inline: true },
+              { name: "📞 Phone", value: formData.phone || "Not provided", inline: true },
+              { name: "💼 LinkedIn", value: formData.linkedin || "Not provided", inline: true }
             ],
             ...(formData.logo && { thumbnail: { url: formData.logo } }),
             timestamp: new Date().toISOString(),
@@ -230,6 +237,58 @@ const SubmitStartup = () => {
                     />
                   </div>
                   <p className="text-xs text-gray-500">What roles or expertise are you looking for?</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Contact Information */}
+            <Card className="bg-white border border-gray-200 shadow-sm">
+              <CardHeader>
+                <CardTitle className="text-xl text-gray-900">Contact Information</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">Email *</label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <Input
+                      type="email"
+                      placeholder="founder@yourstartup.com"
+                      className="pl-10 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      required
+                    />
+                  </div>
+                  <p className="text-xs text-gray-500">Primary contact email for inquiries</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-700">Phone Number</label>
+                    <div className="relative">
+                      <Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                      <Input
+                        placeholder="+1 (555) 123-4567"
+                        className="pl-10 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange('phone', e.target.value)}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-700">LinkedIn Profile</label>
+                    <div className="relative">
+                      <Linkedin className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                      <Input
+                        placeholder="https://linkedin.com/in/yourprofile"
+                        className="pl-10 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                        value={formData.linkedin}
+                        onChange={(e) => handleInputChange('linkedin', e.target.value)}
+                      />
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
