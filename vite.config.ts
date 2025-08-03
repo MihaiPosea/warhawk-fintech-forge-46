@@ -5,7 +5,6 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/warhawk-fintech-forge-46/', // Set base for GitHub Pages
   server: {
     host: "::",
     port: 8080,
