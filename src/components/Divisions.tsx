@@ -52,16 +52,12 @@ const Divisions = () => {
               description: "Comprehensive analysis of merger and acquisition opportunities across various sectors"
             },
             {
-              title: "LBO Case Studies", 
-              description: "Detailed leveraged buyout analysis and financial modeling exercises"
+              title: "Flagship M&A Pitch", 
+              description: "Comprehensive M&A pitch presentations showcasing strategic acquisition opportunities"
             },
             {
               title: "Industry Sector Analysis",
               description: "Deep-dive research into emerging markets and industry trends"
-            },
-            {
-              title: "IPO Valuation Models",
-              description: "Financial modeling and valuation frameworks for public offerings"
             }
           ]
         },
