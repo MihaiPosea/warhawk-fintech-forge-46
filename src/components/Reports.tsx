@@ -32,14 +32,8 @@ const Reports = () => {
         </div>
 
         {/* Preview of Report Types */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid md:grid-cols-2 gap-6 mt-12">
           {[
-            {
-              icon: FileText,
-              title: "M&A Research Reports",
-              description: "Comprehensive merger and acquisition analysis",
-              division: "Investment Banking"
-            },
             {
               icon: TrendingUp,
               title: "Flagship M&A Pitch", 
