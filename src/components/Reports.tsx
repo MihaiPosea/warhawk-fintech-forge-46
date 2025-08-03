@@ -32,7 +32,7 @@ const Reports = () => {
         </div>
 
         {/* Preview of Report Types */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {[
             {
               icon: FileText,
@@ -42,20 +42,14 @@ const Reports = () => {
             },
             {
               icon: TrendingUp,
-              title: "LBO Case Studies", 
-              description: "Detailed leveraged buyout financial modeling",
+              title: "Flagship M&A Pitch", 
+              description: "Comprehensive M&A pitch presentations showcasing strategic acquisition opportunities",
               division: "Investment Banking"
             },
             {
               icon: Award,
               title: "Industry Analysis",
               description: "Deep-dive sector research and trends",
-              division: "Investment Banking"
-            },
-            {
-              icon: Building,
-              title: "IPO Valuations",
-              description: "Public offering valuation frameworks",
               division: "Investment Banking"
             }
           ].map((report, index) => (
